@@ -1,3 +1,152 @@
+
+
+body{
+  margin:  0;
+  padding: 0;
+  background-color: #fff;
+}
+
+.principal{
+display:flex;
+flex-wrap: wrap;
+flex-direction: column; 
+align-items: center;
+justify-content: center;
+color: #0a0a0aB6;
+background-color: #fff;
+color: #595757;
+width: 100vh;
+height: 90vh;
+
+margin: 0 20px;
+}
+.section-tela4 {
+  display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    margin: 50px 0px;  
+}
+.centralizado{
+  text-align: center;
+  color: #F28705;
+}
+.item{
+  margin: 20px; 
+  text-align: center;
+  font-size: 16px;
+  font-weight: bold;
+  width: 200px;
+  height: 200px;
+}
+.item:hover{
+  background: #ffffff;
+  border-radius: 5px;
+  box-shadow: 0 0 5px #ebe6e6,
+              0 0 25px #ebe6e6,
+              0 0 50px #ebe6e6;    
+}
+
+#home-click { 
+  background: #c1c1c1;
+  border-radius: 30px;  
+}
+
+#home-click:hover { 
+  background: #F28705;
+}
+
+#home-click:hover #home-click-text {
+  color: #fff;
+}
+
+img{
+  width: 200px;
+  height: 160px;
+  border-radius: 30px;  
+  margin-bottom: 5px;
+}
+.selecionado:hover {  
+  cursor: pointer;
+}
+
+h1{
+  margin-bottom: 0px;
+}
+
+header{ 
+  justify-content: center;
+}
+a{
+  color: #595757;
+  text-decoration: none;
+}
+a:hover{
+  color: black;
+}
+btnAdd{
+  
+}
+
+#tela4 {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #0a0a0aB6;
+  background-color: #fff;
+  color: #595757;
+  width: 100%;
+  height: 100%;
+  margin: 0px;
+}
+
+#topo-tela4 {
+  margin-top: 50px;
+}
+
+.navbar{
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding: .5rem;
+}
+
+.bg-dark {
+  background-color: #02403A!important;
+}
+
+#text-home{
+  text-align: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
 body{
   margin:  0;
   padding: 0;
@@ -18,12 +167,7 @@ height: 90vh;
 
 margin: 0 20px;
 }
-.section-tela4 {
-  display: flex;
-  margin-bottom: 20px;
-  justify-content: center;
-  align-items: center;  
-}
+
 .centralizado{
   text-align: center;
 }
@@ -70,3 +214,27 @@ a:hover{
 flex-wrap{
   flex-wrap: wrap;
 }
+
+#tela4 {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #0a0a0aB6;
+  background-color: #fff;
+  color: #595757;
+  width: 100%;
+  height: 100%;
+  margin: 0px;
+}
+
+.section-tela4 {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  margin: 50px 0px;
+}
+*/
