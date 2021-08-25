@@ -1,4 +1,4 @@
-const baseURL = "https://professor-allocation-walkiria.herokuapp.com";
+const baseURL = "https://professor-allocation-recodev.herokuapp.com";
 
 async function getData(route) {	
 	const response = await fetch(baseURL + route);
