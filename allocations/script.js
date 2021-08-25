@@ -1,14 +1,12 @@
-//caminho do recurso:
 const route = "/allocations/"
 let departments = [];
 let days = ['SUNDAY', 'MONDAY', 'TUESDAY', 'WEDNESDAY', 'THURSDAY', 'FRIDAY', 'SATURDAY' ];
 let hours = ['01:00+0000', '02:00+0000', '03:00+0000', '04:00+0000', '05:00+0000', '06:00+0000', '07:00+0000', '08:00+0000', '09:00+0000', '10:00+0000', '11:00+0000', '12:00+0000', '13:00+0000', '14:00+0000', '15:00+0000', '16:00+0000', '17:00+0000', '18:00+0000', '19:00+0000', '20:00+0000', '21:00+0000', '22:00+0000', '23:00+0000', '00:00+0000'];
 
-//id começando como undefined para efetuar verificação
 let actualId = undefined;
-//Instanciando a tabela
+
 const table = document.getElementById("tableBody");
-//Método que cria uma linha na tabela:
+
 async function createLine(allocation) {
 	let linha = document.createElement("tr");
 
@@ -58,13 +56,13 @@ async function createLine(allocation) {
 
 	table.appendChild(linha);
 }
-//Método que recarrega a tabela, ele limpa a tabela e depois a carrega:
+
 async function refreshTable() {
 	table.innerHTML = "";
 
 	loadTable();
 }
-//Método que carrega a tabela:
+
 async function loadTable(){
 	let meusDados = await getData(route);
 	
@@ -72,7 +70,7 @@ async function loadTable(){
 		createLine(item);
 	}
 }
-//Evento disparado quando aperta em Adicionar novo Elemento:
+
 function btnAdd_click() {
 	
 	document.getElementById("selectProfessorId").value = "selected";
@@ -84,7 +82,7 @@ function btnAdd_click() {
 	title.textContent = "Create Allocation";
 	actualId = undefined;
 }
-//Evento disparado quando aperta em Editar Elemento:
+
 function btnUpdate_click(allocation){
 	const title = document.getElementById("modalCreateTitle");
 	title.textContent = "Update Allocation";
@@ -100,7 +98,7 @@ function btnUpdate_click(allocation){
 	var myModal = new bootstrap.Modal(document.getElementById('modalCreate'));
 	myModal.show();
 }
-//Evento disparado quando aperta em Deletar Elemento:
+
 function btnDelete_click(allocation) {
 	actualId = allocation.id;
 	
@@ -112,7 +110,7 @@ function btnDelete_click(allocation) {
 	var myModalDelete = new bootstrap.Modal(document.getElementById('modalDelete'))
 	myModalDelete.show();
 }
-//Evento disparado ao confirmar criação de um novo recurso:
+
 async function applyAddAllocation(){
 	const professorId = document.getElementById("selectProfessorId").value;
 	const courseId = document.getElementById("selectCourseId").value;
@@ -153,7 +151,7 @@ async function applyAddAllocation(){
 		refreshTable();
 	}
 }
-//Evento disparado ao confirmar remoção de um novo recurso:
+
 async function applyDeleteAllocation(){
 	const result = await deleteData(route + actualId);
 
@@ -161,19 +159,16 @@ async function applyDeleteAllocation(){
 		refreshTable();
 	}
 }
-//Pegando o botão adicionar e informando o seu evento:
+
 const btnAdd = document.getElementById("btnAdd");
 btnAdd.addEventListener("click", btnAdd_click);
 
-//Pegando o botão confirmar a adição e informando o seu evento:
 const confirmSave = document.getElementById("btnModalCreate");
 confirmSave.addEventListener("click", applyAddAllocation);
 
-//Pegando o botão confirmar a remoção e informando o seu evento:
 const confirmDelete = document.getElementById("btnModalDelete");
 confirmDelete.addEventListener("click", applyDeleteAllocation);
 
-//método que carrega a lista de professores:
 async function loadSelectProfessorId() {
 	const routeProfessor = "/professors/";
 	professors = await getData(routeProfessor);
@@ -238,5 +233,4 @@ async function loadSelectDayHour() {
 
 loadSelectDayHour();
 
-//chamando o método de carregar a tabela para exibir na tela
 loadTable();

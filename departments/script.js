@@ -106,15 +106,12 @@ async function applyDeleteProfessor(){
 	}
 }
 
-//Pegando o botão adicionar e informando o seu evento:
 const btnAdd = document.getElementById("btnAdd");
 btnAdd.addEventListener("click", btnAdd_click);
 
-//Pegando o botão confirmar a adição e informando o seu evento:
 const confirmSave = document.getElementById("btnModalCreate");
 confirmSave.addEventListener("click", applyAddProfessor);
 
-//Pegando o botão confirmar a remoção e informando o seu evento:
 const confirmDelete = document.getElementById("btnModalDelete");
 confirmDelete.addEventListener("click", applyDeleteProfessor);
 

@@ -1,12 +1,11 @@
-//caminho do recurso:
 const route = "/professors/"
+
 let departments = [];
 
-//id começando como undefined para efetuar verificação
 let actualId = undefined;
-//Instanciando a tabela
+
 const table = document.getElementById("tableBody");
-//Método que cria uma linha na tabela:
+
 async function createLine(professor) {
 	let linha = document.createElement("tr");
 
@@ -46,13 +45,13 @@ async function createLine(professor) {
 
 	table.appendChild(linha);
 }
-//Método que recarrega a tabela, ele limpa a tabela e depois a carrega:
+
 async function refreshTable() {
 	table.innerHTML = '';
 
 	loadTable();
 }
-//Método que carrega a tabela:
+
 async function loadTable(){
 	let meusDados = await getData(route);
 	
@@ -60,7 +59,7 @@ async function loadTable(){
 		createLine(item);
 	}
 }
-//Evento disparado quando aperta em Adicionar novo Elemento:
+
 function btnAdd_click() {
 	
 	document.getElementById("txtName").value = "";
@@ -70,7 +69,7 @@ function btnAdd_click() {
 	title.textContent = "Create Professor";
 	actualId = undefined;
 }
-//Evento disparado quando aperta em Editar Elemento:
+
 function btnUpdate_click(professor){
 	const title = document.getElementById("modalCreateTitle");
 	title.textContent = "Update Professor";
@@ -84,7 +83,7 @@ function btnUpdate_click(professor){
 	var myModal = new bootstrap.Modal(document.getElementById('modalCreate'));
 	myModal.show();
 }
-//Evento disparado quando aperta em Deletar Elemento:
+
 function btnDelete_click(professor) {
 	actualId = professor.id;
 
@@ -94,20 +93,15 @@ function btnDelete_click(professor) {
 	var myModalDelete = new bootstrap.Modal(document.getElementById('modalDelete'));
 	myModalDelete.show();
 }
-//Evento disparado ao confirmar criação de um novo recurso:
+
 async function applyAddProfessor(){
 	const name = document.getElementById("txtName").value;
 	const cpf = document.getElementById("txtCPF").value;
 	const idDepartment = document.getElementById("selectDepartmentId").value;
 
-	//Selecionando um departamento
+	
 	let result;
 
-	/*if (!name) { alert("Name é obrigatório"); return}
-	if (!cpf) { alert("CPF é obrigatório"); return}
-	if (!idDepartment || idDepartment === "selected") { alert("Department é obrigatório"); return} */
-
-	
 	if (!name || !cpf || !idDepartment || idDepartment === "selected") {
 		alert("Fill in the required fields!");
 		return;
@@ -131,7 +125,7 @@ async function applyAddProfessor(){
 	}
 	
 }
-//Evento disparado ao confirmar remoção de um novo recurso:
+
 async function applyDeleteProfessor(){
 	const result = await deleteData(route + actualId);
 
@@ -139,19 +133,15 @@ async function applyDeleteProfessor(){
 		refreshTable();
 	}
 }
-//Pegando o botão adicionar e informando o seu evento:
 const btnAdd = document.getElementById("btnAdd");
 btnAdd.addEventListener("click", btnAdd_click);
 
-//Pegando o botão confirmar a adição e informando o seu evento:
 const confirmSave = document.getElementById("btnModalCreate");
 confirmSave.addEventListener("click", applyAddProfessor);
 
-//Pegando o botão confirmar a remoção e informando o seu evento:
 const confirmDelete = document.getElementById("btnModalDelete");
 confirmDelete.addEventListener("click", applyDeleteProfessor);
 
-//método que carrega a lista de departmantos:
 async function loadSelectDepartmentId() {
 	const routeDepartment = "/departments/";
 	departaments = await getData(routeDepartment);
@@ -169,71 +159,4 @@ async function loadSelectDepartmentId() {
 
 loadSelectDepartmentId();
 
-//chamando o método de carregar a tabela para exibir na tela
 loadTable();
-
-
-/*
-async function getData(route) {	
-	const response = await fetch(baseURL + route);
-	return await response.json();
-}
-/*
-/*
-baseURL = "https://professor-allocation-walkiria.herokuapp.com";
-*/
-/*
-
-baseURL = "https://professor-allocation-walkiria.herokuapp.com/professors/";
-
-
-async function getData(){
-	const response = await fetch(baseURL);
-	const json = await response.json();
-	return json;
-}
-
-async function createData(name) {
-	fetch(baseURL, {
-    method: "POST",
-    body: JSON.stringify({name}),
-    headers: { "Content-Type": "application/json" },
-  }).then((response) => {
-    if (!response.ok) {
-      console.log("Error!");
-    }
-
-    response.json().then((json) => {
-     createLine(json);
-    });
-  });
-}
-
-async function updateData(id, name) {
-	fetch(baseURL + id, {
-	    method: "PUT",
-	    body: JSON.stringify({ name: name }),
-	    headers: { "Content-Type": "application/json" },
-  	}).then((response) => {
-   		if (!response.ok) {
-     		 console.log("Error!");
-    	}
-
-   		response.json().then((json) => {
-   		 refreshTable();     		
-    	});
- 	});
-}
-
-async function deleteData() {
-	fetch(baseURL + actualId, {
-    method: "DELETE",
-  }).then((response) => {
-    if (!response.ok) {
-      console.log("houve um erro");
-    }
-   
-    refreshTable();
-  });
-}
-*/
