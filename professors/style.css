@@ -7,3 +7,57 @@
 p{
 	font-size: 12px;
 }
+
+#btnAdd{
+	margin-bottom: 10px;
+	color: #fff;
+	background-color: #027368;
+	border-color: #027368;
+}
+
+#btnAdd:hover {
+	background-color: #02403A;
+}
+.container{
+	margin-top:  80px;
+}
+p{
+	font-size: 12px;
+}
+
+.bg-dark {
+	background-color: #02403A!important;
+  }
+
+  .btn-info {
+    background-color: #0dcaf000;
+    border-color: #0dcaf0;
+}
+  
+.btn-info:hover {
+    background-color: #0dcaf0;
+    border-color: #0dcaf0;
+}
+
+.btn-danger {
+    color: rgb(0, 0, 0);
+    background-color: #dc354600;
+    border-color: #dc3545;
+}
+
+.btn-danger:hover {
+    color: rgb(255, 255, 255);
+    background-color: #dc3545;
+    border-color: #dc3545;
+}
+
+.fa-edit {
+  font-size: 25px;
+  margin-left: 14px;
+}
+
+.fa-trash-alt {
+  font-size: 25px;
+  margin-left: 23px;
+}
+
