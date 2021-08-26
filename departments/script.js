@@ -56,6 +56,16 @@ function btnAdd_click() {
 	const title = document.getElementById("modalCreateTitle");
 	title.textContent = "Create Department";
 	actualId = undefined;
+	
+	document.getElementById("btnModalCreate").disabled = true;
+	document.getElementById("txtName").addEventListener("input", function(event){
+	var conteudo = document.getElementById("txtName").value;
+	if (conteudo !== null && conteudo !== '') {      
+		document.getElementById("btnModalCreate").disabled = false;
+		} else {
+		document.getElementById("btnModalCreate").disabled = true;
+		}
+	});
 }
 
 function btnUpdate_click(dep) {
