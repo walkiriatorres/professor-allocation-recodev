@@ -71,6 +71,22 @@ async function loadTable(){
 	}
 }
 
+function checkInputs(inputs) {
+
+    var filled = true;
+  
+  	inputs.forEach(function(input) {
+    
+	    if(input.value === "selected") {
+	        filled = false;
+	    }
+	  
+	    });
+	  
+  return filled;
+  
+}
+
 function btnAdd_click() {
 	
 	document.getElementById("selectProfessorId").value = "selected";
@@ -81,6 +97,30 @@ function btnAdd_click() {
 	const title = document.getElementById("modalCreateTitle");
 	title.textContent = "Create Allocation";
 	actualId = undefined;
+	
+	document.getElementById("btnModalCreate").disabled = true;
+
+	var professor_input = document.getElementById("selectProfessorId");
+	var course_input = document.getElementById("selectCourseId");
+	var day_input = document.getElementById("selectDayOfWeekId");
+	var start_input = document.getElementById("selectStartHourId");
+	var end_input = document.getElementById("selectEndHourId");
+
+	var myInputs = [professor_input, course_input, day_input, start_input, end_input];
+
+	myInputs.forEach(function(input) {
+    
+	  input.addEventListener("blur", function() {
+
+	    if(checkInputs(myInputs)) {
+	      btnModalCreate.disabled = false;
+	    } else {
+	      btnModalCreate.disabled = true;
+	    }
+
+	  });
+
+	});
 	
 }
 
