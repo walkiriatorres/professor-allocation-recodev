@@ -60,6 +60,18 @@ async function loadTable(){
 	}
 }
 
+function checkInputs(inputs) {
+
+  var filled = true;
+  
+  inputs.forEach(function(input) {    
+    if(input.value === "" || input.value === "selected") {
+        filled = false;
+    }  
+    });  
+  return filled;  
+}
+
 function btnAdd_click() {
 	
 	document.getElementById("txtName").value = "";
@@ -68,6 +80,24 @@ function btnAdd_click() {
 	const title = document.getElementById("modalCreateTitle");
 	title.textContent = "Create Professor";
 	actualId = undefined;
+	
+	document.getElementById("btnModalCreate").disabled = true;
+
+	var professor_input = document.getElementById("txtName");
+	var cpf_input = document.getElementById("txtCPF");
+	var department_input = document.getElementById("selectDepartmentId");
+	var myInputs = [professor_input, cpf_input, department_input];
+
+	myInputs.forEach(function(input) {    
+	  input.addEventListener("blur", function() {
+	    if(checkInputs(myInputs)) {
+	      btnModalCreate.disabled = false;
+	    } else {
+	      btnModalCreate.disabled = true;
+	    }
+	  });
+	});
+	
 }
 
 function btnUpdate_click(professor){
