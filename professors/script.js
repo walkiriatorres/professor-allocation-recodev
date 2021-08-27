@@ -83,19 +83,31 @@ function btnAdd_click() {
 	
 	document.getElementById("btnModalCreate").disabled = true;
 
-	var professor_input = document.getElementById("txtName");
-	var cpf_input = document.getElementById("txtCPF");
-	var department_input = document.getElementById("selectDepartmentId");
-	var myInputs = [professor_input, cpf_input, department_input];
+	var cpf_input = document.getElementById("txtCPF");	
+	var value_cpf = cpf_input.value;
 
-	myInputs.forEach(function(input) {    
+	cpf_input.addEventListener("blur", function() {
+		    if(validarCPF(value_cpf)) {
+		      btnModalCreate.disabled = false;
+		    } 
+		  });
+
+	var professor_input = document.getElementById("txtName");
+	var department_input = document.getElementById("selectDepartmentId");
+	var minhasInputs = [professor_input, cpf_input, department_input];
+
+	minhasInputs.forEach(function(input) {
+    
 	  input.addEventListener("blur", function() {
-	    if(checkInputs(myInputs)) {
+
+	    if(checkInputs(minhasInputs) && validarCPF(valor_do_cpf) ) {
 	      btnModalCreate.disabled = false;
 	    } else {
 	      btnModalCreate.disabled = true;
 	    }
+
 	  });
+
 	});
 	
 }
@@ -195,7 +207,7 @@ function validarCPF(){
    var cpf = document.getElementById("txtCPF").value;
 
    if(cpf.length != 11) {
-   	alert("CPF inválido. Digite CPF com 11 dígitos");
+   	//alert("CPF inválido. Digite CPF com 11 dígitos");
       return false;
    }
       
@@ -204,7 +216,7 @@ function validarCPF(){
       cpf == "44444444444" || cpf == "55555555555" ||
       cpf == "66666666666" || cpf == "77777777777" ||
       cpf == "88888888888" || cpf == "99999999999"){
-      alert("CPF inválido. Tente novamente.");
+      //alert("CPF inválido. Tente novamente.");
       return false;
    }
   
@@ -220,7 +232,7 @@ function validarCPF(){
    }
     
    if(resto != parseInt(cpf.charAt(9))){
-     alert("CPF inválido. Tente novamente.");
+    //alert("CPF inválido. Tente novamente.");
      return false;
    }
  
@@ -235,10 +247,10 @@ function validarCPF(){
    }
  
    if(resto != parseInt(cpf.charAt(10))){
-     alert("CPF inválido. Tente novamente.");
+     //alert("CPF inválido. Tente novamente.");
      return false;
    }
  
-   alert("CPF válido. Muito obrigado."); 
+   //alert("CPF válido. Muito obrigado."); 
    return true;
 }
