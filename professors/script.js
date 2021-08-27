@@ -83,15 +83,7 @@ function btnAdd_click() {
 	
 	document.getElementById("btnModalCreate").disabled = true;
 
-	var cpf_input = document.getElementById("txtCPF");	
-	var value_cpf = cpf_input.value;
-
-	cpf_input.addEventListener("blur", function() {
-		    if(validarCPF(value_cpf)) {
-		      btnModalCreate.disabled = false;
-		    } 
-		  });
-
+	var cpf_input = document.getElementById("txtCPF");
 	var professor_input = document.getElementById("txtName");
 	var department_input = document.getElementById("selectDepartmentId");
 	var minhasInputs = [professor_input, cpf_input, department_input];
@@ -109,7 +101,6 @@ function btnAdd_click() {
 	  });
 
 	});
-	
 }
 
 function btnUpdate_click(professor){
@@ -254,3 +245,13 @@ function validarCPF(){
    //alert("CPF válido. Muito obrigado."); 
    return true;
 }
+
+var input_do_cpf = document.getElementById("txtCPF");
+var valor_do_cpf = input_do_cpf.value;
+input_do_cpf.addEventListener("blur", function() {
+	    if(validarCPF(valor_do_cpf)) {
+	      btnModalCreate.disabled = false;
+	    } else {
+	      btnModalCreate.disabled = true;
+	    }
+	  });
