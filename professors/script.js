@@ -251,7 +251,9 @@ var valor_do_cpf = input_do_cpf.value;
 input_do_cpf.addEventListener("blur", function() {
 	    if(validarCPF(valor_do_cpf)) {
 	      btnModalCreate.disabled = false;
+	      document.getElementById("txtCPF").style.borderColor = "#103017";
 	    } else {
 	      btnModalCreate.disabled = true;
+	      document.getElementById("txtCPF").style.borderColor = "#ff0000";
 	    }
 	  });
