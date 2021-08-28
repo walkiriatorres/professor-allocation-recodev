@@ -248,12 +248,17 @@ function validarCPF(){
 
 var input_do_cpf = document.getElementById("txtCPF");
 var valor_do_cpf = input_do_cpf.value;
+var statusValidateCPF = document.getElementById("msgError");
 input_do_cpf.addEventListener("blur", function() {
 	    if(validarCPF(valor_do_cpf)) {
 	      btnModalCreate.disabled = false;
 	      document.getElementById("txtCPF").style.borderColor = "#103017";
+	      statusValidateCPF.innerText = "CPF válido";
+	      statusValidateCPF.style.color = "#103017";
 	    } else {
 	      btnModalCreate.disabled = true;
 	      document.getElementById("txtCPF").style.borderColor = "#ff0000";
+	      statusValidateCPF.innerText = "CPF inválido";
+	      statusValidateCPF.style.color = "#ff0000";
 	    }
 	  });
