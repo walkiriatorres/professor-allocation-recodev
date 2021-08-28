@@ -13,7 +13,7 @@ async function create(route, data) {
   });
 
   if (!response.ok) {
-    alert("houve um erro");
+    alert("Não foi possível realizar o cadastro.");
     return false;
   }
 
@@ -28,7 +28,7 @@ async function update(route, data) {
   });
 
   if (!response.ok) {
-    alert("houve um erro");
+    alert("Não foi possível atualizar o cadastro.");
     return false;
   }
 
@@ -41,7 +41,7 @@ async function deleteData(route) {
   });
 
   if (!response.ok) {
-    alert("houve um erro");
+    alert("Não foi possível deletar o cadastro.");
     return false;
   }
 
