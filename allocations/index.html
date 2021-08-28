@@ -1,232 +1,175 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1">
 
-    <!-- Bootstrap CSS -->
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
-      crossorigin="anonymous"
-    >
-    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+  <!-- Bootstrap CSS -->
 
-    <link rel="stylesheet" href="./style.css" />
-    
-    <script src="https://kit.fontawesome.com/a8657668a1.js" crossorigin="anonymous"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
 
-    <title>RECoDev 5 - ALLOCATIONS</title>
-  </head>
-  <body>
-    <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="../">Professor Allocation</a>
-          <button
-            class="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li class="nav-item">
-                <a class="nav-link" aria-current="page" href="../">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="../departments">Department</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="../courses">Course</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="../professors">Professor</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link active" href="#">Allocation</a>
-              </li>        
-            </ul>      
-          </div>
-        </div>
-    </nav>
-    <main class="container">
-      <h1>ALLOCATIONS</h1>
-      <button
-        id="btnAdd"
-        type="button"
-        class="btn btn-success"
-        data-bs-toggle="modal"
-        data-bs-target="#modalCreate"
-      >
-       Add Allocations
-      </button>           
-      <table class="table table-striped">
-        <thead>
-          <tr>
-            <th scope="col">Professor</th>
-            <th scope="col">Department</th>            
-            <th scope="col">Course</th>
-            <th scope="col">Day of week</th>
-            <th scope="col">Hour</th>
-            <th scope="col">Edit</th>
-            <th scope="col">Delete</th>
-            <!-- <th scope="col"><i class="far fa-edit"></i></th>
+  <link rel="stylesheet" href="./style.css" />
+
+  <script src="https://kit.fontawesome.com/a8657668a1.js" crossorigin="anonymous"></script>
+
+  <title>RECoDev 5 - ALLOCATIONS</title>
+</head>
+
+<body>
+  <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="/Professor Allocation">Professor Allocation</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="/Professor Allocation">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/departments">Department</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/courses">Course</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/professors">Professor</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="/allocations">Allocation</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <main class="container">
+    <h1>ALLOCATIONS</h1>
+    <button id="btnAdd" type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#modalCreate">
+      Add Allocations
+    </button>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col">Professor</th>
+          <th scope="col">Department</th>
+          <th scope="col">Course</th>
+          <th scope="col">Day of week</th>
+          <th scope="col">Hour</th>
+          <th scope="col">Edit</th>
+          <th scope="col">Delete</th>
+          <!-- <th scope="col"><i class="far fa-edit"></i></th>
             <th scope="col"><i class="far fa-trash-alt"></i></th> -->
-            
-          </tr>
-        </thead>
-        <tbody id="tableBody"></tbody>
-      </table>
-    </main>
-    <!-- Modal CREATE and UPDATE-->
-    <div
-      class="modal fade"
-      id="modalCreate"
-      tabindex="-1"
-      role="dialog"
-      aria-labelledby="modalCreate"
-      aria-hidden="true">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="modalCreateTitle">Create Allocation</h5>
-            <button
-              type="button"
-              class="close"
-              data-bs-dismiss="modal"
-              aria-label="Fechar"
-            >
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
-            <form>
-              <p>*Required fields</p>
-              <div class="form-group">
-                <label for="selectProfessorId">Professor*</label>
-                <select class="form-select" id="selectProfessorId">
-                  <option value="selected" selected>Select a professor</option>
-                </select>           
-              </div>
-              <div class="form-group">
-                <label for="selectCourseId">Course*</label>
-                <select class="form-select" id="selectCourseId">
-                  <option value="selected" selected>Select a course</option>
-                </select>           
-              </div>
-              <div class="form-group">
-                <label for="selectDayOfWeekId">Day of week*</label>
-                <select class="form-select" id="selectDayOfWeekId">
-                  <option value="selected" selected>Select a day of week</option>
-                </select>           
-              </div>
-              <div class="flex-row">
-                <div class="form-group ">
+
+        </tr>
+      </thead>
+      <tbody id="tableBody"></tbody>
+    </table>
+  </main>
+  <!-- Modal CREATE and UPDATE-->
+  <div class="modal fade" id="modalCreate" tabindex="-1" role="dialog" aria-labelledby="modalCreate" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalCreateTitle">Create Allocation</h5>
+          <button type="button" class="close" data-bs-dismiss="modal" aria-label="Fechar">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <p>*Required fields</p>
+            <div class="form-group">
+              <label for="selectProfessorId">Professor*</label>
+              <select class="form-select" id="selectProfessorId">
+                <option value="selected" selected>Select a professor</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="selectCourseId">Course*</label>
+              <select class="form-select" id="selectCourseId">
+                <option value="selected" selected>Select a course</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="selectDayOfWeekId">Day of week*</label>
+              <select class="form-select" id="selectDayOfWeekId">
+                <option value="selected" selected>Select a day of week</option>
+              </select>
+            </div>
+            <div class="flex-row">
+              <div class="form-group ">
                 <label for="selectStartHourId">Star hour*</label>
                 <select class="form-select" id="selectStartHourId">
                   <option value="selected" selected>Select a star hour</option>
-                </select>           
+                </select>
               </div>
               <div class="form-group">
                 <label for="selectEndHourId">End hour*</label>
                 <select class="form-select" id="selectEndHourId">
                   <option value="selected" selected>Select a end hour</option>
-                </select>           
+                </select>
               </div>
-              </div>              
-              
+            </div>
 
-            </form> 
+
+          </form>
           <div class="modal-footer">
-            <button
-              type="button"
-              class="btn btn-secondary"
-              data-bs-dismiss="modal"
-            >Cancel
-          </button>
-            <button
-              id="btnModalCreate"
-              type="button"
-              class="btn btn-success"
-              data-bs-dismiss="modal"
-            >Save
-          </button>
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel
+            </button>
+            <button id="btnModalCreate" type="button" class="btn btn-success" data-bs-dismiss="modal">Save
+            </button>
           </div>
         </div>
       </div>
     </div>
   </div>
-    <!-- Modal DELETE-->
-    <div
-      class="modal fade"
-      id="modalDelete"
-      tabindex="-1"
-      role="dialog"
-      aria-labelledby="modalDelete"
-      aria-hidden="true">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="modalDeleteTitle">Delete Allocation</h5>
-            <button
-              type="button"
-              class="close"
-              data-bs-dismiss="modal"
-              aria-label="Fechar"
-            >
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
-            <p>Do you want to delete allocation: <strong id="txtDeleteProfessor"></strong></p>
-          </div>
-          <div class="modal-footer">
-            <button
-              type="button"
-              class="btn btn-secondary"
-              data-bs-dismiss="modal"
-            >Cancel
+  <!-- Modal DELETE-->
+  <div class="modal fade" id="modalDelete" tabindex="-1" role="dialog" aria-labelledby="modalDelete" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalDeleteTitle">Delete Allocation</h5>
+          <button type="button" class="close" data-bs-dismiss="modal" aria-label="Fechar">
+            <span aria-hidden="true">&times;</span>
           </button>
-            <button
-              id="btnModalDelete"
-              type="button"
-              class="btn btn-danger"
-              data-bs-dismiss="modal"
-            >Delete
+        </div>
+        <div class="modal-body">
+          <p>Do you want to delete allocation: <strong id="txtDeleteProfessor"></strong></p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel
           </button>
-          </div>
+          <button id="btnModalDelete" type="button" class="btn btn-danger" data-bs-dismiss="modal">Delete
+          </button>
         </div>
       </div>
     </div>
-    
+  </div>
 
 
 
-        <!-- Optional JavaScript; choose one of the two! -->
 
-      <!-- Option 1: Bootstrap Bundle with Popper -->
-      <script
-        src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-        crossorigin="anonymous"
-      ></script>
+  <!-- Optional JavaScript; choose one of the two! -->
 
-      <!-- Option 2: Separate Popper and Bootstrap JS -->
-      <!--
+  <!-- Option 1: Bootstrap Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+
+  <!-- Option 2: Separate Popper and Bootstrap JS -->
+  <!--
 
       <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
       -->
-      <script src="../service/api.js"></script>
-      <script src="./script.js"></script>
-  </body>
+  <script src="../service/api.js"></script>
+  <script src="./script.js"></script>
+</body>
+
 </html>
