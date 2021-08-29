@@ -206,6 +206,8 @@ async function applyAddAllocation(){
 	}
 	if(result) {
 		refreshTable();
+	} else {
+		alert("Professor já está alocado neste horário");
 	}
 }
 
