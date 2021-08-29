@@ -82,11 +82,12 @@ function entrar(){
     }
   })
 
+
   if(usuario.value == userValid.user && senha.value == userValid.senha){
 
 
     setTimeout(()=>{
-      window.location.href="http://127.0.0.1:5500/Professor%20Allocation/index.html"
+      window.location.href="https://elegant-knuth-94245c.netlify.app/professor%20allocation/"
     }, 2000)
 
     let token = Ma.random().toString(16)
