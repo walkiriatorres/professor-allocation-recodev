@@ -54,7 +54,7 @@ async function createLine(allocation) {
 	colunaDelete.appendChild(btnDelete);
 	linha.appendChild(colunaDelete);
 
-	table.insertBefore(linha, table.firstChild);
+	table.appendChild(linha);
 }
 
 async function refreshTable() {
