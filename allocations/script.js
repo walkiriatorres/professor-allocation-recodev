@@ -177,15 +177,6 @@ async function applyAddAllocation(){
 
 	let result;
 
-	if (professorId === "selected"
-		|| courseId === "selected"
-		|| dayOfWeek === "selected"
-		|| startHour === "selected"
-		|| endHour === "selected") {
-		alert("Fill in the required fields!");
-		return;
-	}
-
 	const data = {
 		course: {
 			id: courseId
