@@ -35,7 +35,7 @@ async function createLine(dep) {
 	
 	const table = document.getElementById("tableBody");
 	
-	table.appendChild(linha);
+	table.insertBefore(linha, table.firstChild);
 }
 
 async function refreshTable() {
