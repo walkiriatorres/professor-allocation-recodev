@@ -106,14 +106,29 @@ function btnAdd_click() {
 	var day_input = document.getElementById("selectDayOfWeekId");
 	var start_input = document.getElementById("selectStartHourId");
 	var end_input = document.getElementById("selectEndHourId");
-
 	var myInputs = [professor_input, course_input, day_input, start_input, end_input];
+	var statusCheckCollision = document.getElementById("msgCheckCollision");
 
 	myInputs.forEach(function(input) {
     
 	  input.addEventListener("blur", function() {
+		  
+		  
+		  if (start_input.value < end_input.value && end_input.value != "selected") {
+			  document.getElementById("selectStartHourId").style.borderColor = "#103017";
+			  document.getElementById("selectEndHourId").style.borderColor = "#103017";
+			  statusCheckCollision.innerText = "Horário válido";
+			  statusCheckCollision.style.color = "#103017";
+		    } else {
+		        document.getElementById("selectStartHourId").style.borderColor = "#ff0000";
+			document.getElementById("selectEndHourId").style.borderColor = "#ff0000";
+			statusCheckCollision.innerText = "Horário inválido";
+			statusCheckCollision.style.color = "#ff0000";
+		    }
+		  
+		  
 
-	    if(checkInputs(myInputs)) {
+	    if(checkInputs(myInputs) && start_input.value < end_input.value) {
 	      btnModalCreate.disabled = false;
 	    } else {
 	      btnModalCreate.disabled = true;
