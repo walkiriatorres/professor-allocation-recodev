@@ -32,9 +32,8 @@ async function createLine(dep) {
 
 	colunaDelete.appendChild(btnDelete);
 	linha.appendChild(colunaDelete);
-
-	const table = document.getElementById("tableBody");
-	table.appendChild(linha);
+	
+	table.insertBefore(linha, table.firstChild);
 }
 
 async function refreshTable() {
