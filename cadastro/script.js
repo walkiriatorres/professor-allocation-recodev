@@ -113,7 +113,7 @@ function cadastrar(){
 */
 
 setTimeout(()=>{
-    window.location.href = 'http://127.0.0.1:5501/index.html'
+    window.location.href = 'https://elegant-knuth-94245c.netlify.app/'
 }, 3000)
 
 
