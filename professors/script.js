@@ -44,6 +44,7 @@ async function createLine(professor) {
 	linha.appendChild(colunaDelete);
 
 	table.insertBefore(linha, table.firstChild);
+	sortTable(table,'asc',0);
 }
 
 async function refreshTable() {
@@ -271,7 +272,7 @@ function sortTable(table, dir, n) {
     
     switching = false;
     rows = table.rows;    
-    for (i = 0; i < (rows.length - 1); i++) {      
+    for (i = 1; i < (rows.length - 1); i++) {      
       shouldSwitch = false;      
       x = rows[i].getElementsByTagName("TD")[n];
       y = rows[i + 1].getElementsByTagName("TD")[n];
