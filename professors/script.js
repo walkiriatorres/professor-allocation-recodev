@@ -136,11 +136,6 @@ async function applyAddProfessor(){
 	
 	let result;
 
-	if (!name || !cpf || !idDepartment || idDepartment === "selected") {
-		alert("Fill in the required fields!");
-		return;
-	} 
-
 	const data = {
 		name,
 		cpf,
