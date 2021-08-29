@@ -156,6 +156,8 @@ async function applyAddProfessor(){
 	}
 	if(result) {
 		refreshTable();
+	} else {
+		alert("Já existe um professor cadastrado com este CPF");
 	}
 	
 }
