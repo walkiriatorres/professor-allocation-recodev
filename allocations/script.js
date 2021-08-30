@@ -163,10 +163,8 @@ function btnDelete_click(allocation) {
 	actualId = allocation.id;
 	
 	const txtProfessor = document.getElementById("txtDeleteProfessor");
-	txtProfessor.textContent = `${allocation.professor.name} - ${allocation.course.name}`;
-
+	txtProfessor.textContent = `${allocation.professor.name} - ${allocation.course.name} : ${allocation.start} - ${allocation.start} `;
 	
-
 	var myModalDelete = new bootstrap.Modal(document.getElementById('modalDelete'))
 	myModalDelete.show();
 }
@@ -189,8 +187,7 @@ async function applyAddAllocation(){
 		professor: {
 			id: professorId
 		},
-		start: startHour 
-
+		start: startHour
 	}
 
 	if (!actualId) {
