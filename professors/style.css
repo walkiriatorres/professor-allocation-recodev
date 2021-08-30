@@ -35,6 +35,7 @@ p{
 }
   
 .btn-info:hover {
+    color: rgb(255, 255, 255);
     background-color: #0dcaf0;
     border-color: #0dcaf0;
 }
