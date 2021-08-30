@@ -29,11 +29,10 @@ async function createLine(allocation) {
 	colunaDayOfWeek.textContent = allocation.dayofweek;
 	linha.appendChild(colunaDayOfWeek);
 
-	const infoHorario = `${allocation.start} - ${allocation.end}`;
+	const infoHorario = `${allocation.start.substr(0,5)} - ${allocation.end.substr(0,5)}`;
 	let colunaHour = document.createElement("td"); 	
 	colunaHour.textContent = infoHorario;
 	linha.appendChild(colunaHour);
-
 
 	let colunaEdit = document.createElement("td");
 	let btnEdit = document.createElement("button");
@@ -163,9 +162,7 @@ function btnDelete_click(allocation) {
 	actualId = allocation.id;
 	
 	const txtProfessor = document.getElementById("txtDeleteProfessor");
-	let start_without_timezone = allocation.start.substr(0,5);
-	let end_without_timezone = allocation.end.substr(0,5);
-	txtProfessor.textContent = `${allocation.professor.name} - ${allocation.course.name} : ${start_without_timezone} - ${end_without_timezone} `;
+	txtProfessor.textContent = `${allocation.professor.name} - ${allocation.course.name} : ${allocation.start.substr(0,5)} - ${allocation.end.substr(0,5)} `;
 	
 	var myModalDelete = new bootstrap.Modal(document.getElementById('modalDelete'))
 	myModalDelete.show();
