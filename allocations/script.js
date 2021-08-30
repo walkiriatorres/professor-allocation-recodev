@@ -54,7 +54,7 @@ async function createLine(allocation) {
 	colunaDelete.appendChild(btnDelete);
 	linha.appendChild(colunaDelete);
 
-	table.insertBefore(linha, table.firstChild);	
+	table.insertBefore(linha, table.firstChild);
 	sortTable(table,'asc',0);
 }
 
@@ -321,4 +321,3 @@ function sortTable(table, dir, n) {
     }
   }
 }
-
