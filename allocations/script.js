@@ -163,7 +163,9 @@ function btnDelete_click(allocation) {
 	actualId = allocation.id;
 	
 	const txtProfessor = document.getElementById("txtDeleteProfessor");
-	txtProfessor.textContent = `${allocation.professor.name} - ${allocation.course.name} : ${allocation.start} - ${allocation.start} `;
+	let start_without_timezone = allocation.start.substr(0,5);
+	let end_without_timezone = allocation.end.substr(0,5);
+	txtProfessor.textContent = `${allocation.professor.name} - ${allocation.course.name} : ${start_without_timezone} - ${end_without_timezone} `;
 	
 	var myModalDelete = new bootstrap.Modal(document.getElementById('modalDelete'))
 	myModalDelete.show();
