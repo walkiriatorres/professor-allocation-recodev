@@ -34,8 +34,7 @@ async function createLine(cour) {
 	linha.appendChild(colunaDelete);
 
 	const table = document.getElementById("tableBody");
-	table.insertBefore(linha, table.firstChild);	
-	sortTable(table,'asc',1);
+	table.insertBefore(linha, table.firstChild);
 }
 
 async function refreshTable() {
