@@ -251,6 +251,7 @@ input_do_cpf.addEventListener("blur", function() {
 	    if(validarCPF(valor_do_cpf)) {
 	      btnModalCreate.disabled = false;
 	      document.getElementById("txtCPF").style.borderColor = "#e5e9ec";
+	      statusValidateCPF.innerText = "";
 	    } else {
 	      btnModalCreate.disabled = true;
 	      document.getElementById("txtCPF").style.borderColor = "#ff0000";
