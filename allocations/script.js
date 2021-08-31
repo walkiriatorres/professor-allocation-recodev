@@ -116,12 +116,7 @@ function btnAdd_click() {
 	  input.addEventListener("blur", function() {
 		  
 		  
-		  if (start_input.value < end_input.value && end_input.value != "selected") {
-			  document.getElementById("selectStartHourId").style.borderColor = "#103017";
-			  document.getElementById("selectEndHourId").style.borderColor = "#103017";
-			  statusCheckCollision.innerText = "Horário válido";
-			  statusCheckCollision.style.color = "#103017";
-		    } else {
+		  if (start_input.value >= end_input.value && end_input.value == "selected") {			  
 		        document.getElementById("selectStartHourId").style.borderColor = "#ff0000";
 			document.getElementById("selectEndHourId").style.borderColor = "#ff0000";
 			statusCheckCollision.innerText = "Horário inválido";
