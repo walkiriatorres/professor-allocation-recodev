@@ -48,16 +48,17 @@ margin: 0 20px;
               0 0 50px #ebe6e6;    
 }
 
-#home-click { 
+.home-click { 
   background: #c1c1c1;
   border-radius: 30px;  
 }
 
-#home-click:hover { 
+.home-click:hover { 
   background: #F28705;
+  border-radius: 30px;
 }
 
-#home-click:hover #home-click-text {
+.home-click:hover .home-click-text {
   color: #fff;
 }
 
