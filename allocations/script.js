@@ -269,12 +269,12 @@ async function loadSelectDayHour() {
 	for (let item of hours) {
 		let optionStart = document.createElement("option");		
 		optionStart.value = item;
-		optionStart.textContent = item;
+		optionStart.textContent = item.substr(0,5);
 		selectStartHour.appendChild(optionStart);
 
 		let optionEnd = document.createElement("option");
 		optionEnd.value = item;
-		optionEnd.textContent = item;		
+		optionEnd.textContent = item.substr(0,5);		
 		selectEndHour.appendChild(optionEnd);
 	}
 }
