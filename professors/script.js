@@ -250,9 +250,7 @@ var statusValidateCPF = document.getElementById("msgError");
 input_do_cpf.addEventListener("blur", function() {
 	    if(validarCPF(valor_do_cpf)) {
 	      btnModalCreate.disabled = false;
-	      document.getElementById("txtCPF").style.borderColor = "#103017";
-	      statusValidateCPF.innerText = "CPF válido";
-	      statusValidateCPF.style.color = "#103017";
+	      document.getElementById("txtCPF").style.borderColor = "#e5e9ec";
 	    } else {
 	      btnModalCreate.disabled = true;
 	      document.getElementById("txtCPF").style.borderColor = "#ff0000";
