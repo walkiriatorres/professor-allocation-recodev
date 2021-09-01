@@ -13,7 +13,7 @@ async function createLine(dep) {
 
 	let colunaEdit = document.createElement("td");
 	let btnEdit = document.createElement("button");
-	btnEdit.textContent = "Edit";
+	btnEdit.textContent = "Editar";
 	btnEdit.classList.add("btn");
 	btnEdit.classList.add("btn-info");
 
@@ -24,7 +24,7 @@ async function createLine(dep) {
 
 	let colunaDelete = document.createElement("td");
 	let btnDelete = document.createElement("button");
-	btnDelete.textContent = "Delete";
+	btnDelete.textContent = "Deletar";
 	btnDelete.classList.add("btn");
 	btnDelete.classList.add("btn-danger");
 
@@ -55,7 +55,7 @@ async function loadTable(){
 function btnAdd_click() {
 	document.getElementById("txtName").value = "";	
 	const title = document.getElementById("modalCreateTitle");
-	title.textContent = "Create Department";
+	title.textContent = "Criar Departamento";
 	actualId = undefined;
 	
 	document.getElementById("btnModalCreate").disabled = true;
@@ -71,7 +71,7 @@ function btnAdd_click() {
 
 function btnUpdate_click(dep) {
 	const title = document.getElementById("modalCreateTitle");
-	title.textContent = "Update Department";
+	title.textContent = "Atualizar Departamento";
 
 	document.getElementById("txtName").value = dep.name;
 	actualId = dep.id;
