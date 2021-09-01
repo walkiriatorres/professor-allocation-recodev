@@ -54,14 +54,14 @@ p{
 .btn-secondary {
     color: rgb(0, 0, 0);
     background-color: #ffffff;
+    border-style: none;
     
 }
 
 .btn-secondary:hover {
     color: rgb(255, 255, 255);
     background-color: #6c757d;
-    
-	
+    border-style: none;	
 }
 
 .fa-edit {
