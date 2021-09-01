@@ -23,7 +23,7 @@ async function createLine(professor) {
 
 	let colunaEdit = document.createElement("td");
 	let btnEdit = document.createElement("button");
-	btnEdit.textContent = "Edit";
+	btnEdit.textContent = "Editar";
 	btnEdit.classList.add("btn");
 	btnEdit.classList.add("btn-info");
 
@@ -34,7 +34,7 @@ async function createLine(professor) {
 
 	let colunaDelete = document.createElement("td");
 	let btnDelete = document.createElement("button");
-	btnDelete.textContent = "Delete";
+	btnDelete.textContent = "Deletar";
 	btnDelete.classList.add("btn");
 	btnDelete.classList.add("btn-danger");
 
@@ -79,7 +79,7 @@ function btnAdd_click() {
 	document.getElementById("txtCPF").value = "";
 	document.getElementById("selectDepartmentId").value = "selected";	
 	const title = document.getElementById("modalCreateTitle");
-	title.textContent = "Create Professor";
+	title.textContent = "Criar Professor";
 	actualId = undefined;
 	
 	document.getElementById("btnModalCreate").disabled = true;
@@ -106,7 +106,7 @@ function btnAdd_click() {
 
 function btnUpdate_click(professor){
 	const title = document.getElementById("modalCreateTitle");
-	title.textContent = "Update Professor";
+	title.textContent = "Atualizar Professor";
 
 	document.getElementById("txtName").value = professor.name;
 	document.getElementById("txtCPF").value = professor.cpf;
