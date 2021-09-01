@@ -81,11 +81,11 @@
           <form>
             <p>*Campo obrigatório</p>
             <div class="form-group">
-              <label for="txtName">Nome*</label>
+              <label for="txtName" class="required-input">Nome</label>
               <input type="text" class="form-control" id="txtName" maxlength="50" placeholder="Nome">
             </div>
             <div class="form-group">
-              <label for="txtCPF">CPF*</label>
+              <label for="txtCPF" class="required-input">CPF</label>
               <input type="text" class="form-control" id="txtCPF" placeholder="CPF" maxlength="11"
                 oninput="this.value = this.value.replace(/[^0-9]/g, '').replace(/(\..*?)\..*/g, '$1');"
                 onBlur="return validarCPF()">
@@ -95,7 +95,7 @@
               <span id="msgError" class="form-text"></span>
             </div>
             <div class="form-group">
-              <label for="selectDepartmentId">Departamento*</label>
+              <label for="selectDepartmentId" class="required-input">Departamento</label>
               <select class="form-select" id="selectDepartmentId">
                 <option value="selected" selected>Selecione o departamento</option>
               </select>
