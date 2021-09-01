@@ -36,7 +36,7 @@ async function createLine(allocation) {
 
 	let colunaEdit = document.createElement("td");
 	let btnEdit = document.createElement("button");
-	btnEdit.textContent = "Edit";
+	btnEdit.textContent = "Editar";
 	btnEdit.classList.add("btn");
 	btnEdit.classList.add("btn-info");
 
@@ -47,7 +47,7 @@ async function createLine(allocation) {
 
 	let colunaDelete = document.createElement("td");
 	let btnDelete = document.createElement("button");
-	btnDelete.textContent = "Delete";
+	btnDelete.textContent = "Deletar";
 	btnDelete.classList.add("btn");
 	btnDelete.classList.add("btn-danger");
 
@@ -98,7 +98,7 @@ function btnAdd_click() {
 	document.getElementById("selectStartHourId").value = "selected";
 	document.getElementById("selectEndHourId").value = "selected";	
 	const title = document.getElementById("modalCreateTitle");
-	title.textContent = "Create Allocation";
+	title.textContent = "Criar Aula";
 	actualId = undefined;
 	
 	document.getElementById("btnModalCreate").disabled = true;
@@ -142,7 +142,7 @@ function btnAdd_click() {
 
 function btnUpdate_click(allocation){
 	const title = document.getElementById("modalCreateTitle");
-	title.textContent = "Update Allocation";
+	title.textContent = "Atualizar Aula";
 
 	document.getElementById("selectProfessorId").value = allocation.professor.id;
 	document.getElementById("selectCourseId").value = allocation.course.id;
