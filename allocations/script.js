@@ -152,6 +152,44 @@ function btnUpdate_click(allocation){
 
 	actualId = allocation.id;
 
+	document.getElementById("btnModalCreate").disabled = true;
+
+	var professor_input = document.getElementById("selectProfessorId");
+	var course_input = document.getElementById("selectCourseId");
+	var day_input = document.getElementById("selectDayOfWeekId");
+	var start_input = document.getElementById("selectStartHourId");
+	var end_input = document.getElementById("selectEndHourId");
+	var myInputs = [professor_input, course_input, day_input, start_input, end_input];
+	var statusCheckCollision = document.getElementById("msgCheckCollision");
+
+	myInputs.forEach(function(input) {
+    
+	  input.addEventListener("blur", function() {
+		  
+		  if (start_input.value < end_input.value && end_input.value != "selected") {
+			document.getElementById("selectStartHourId").style.borderColor = "#e5e9ec";
+			document.getElementById("selectEndHourId").style.borderColor = "#e5e9ec";
+			statusCheckCollision.innerText = "";		  
+		  } else {
+		        document.getElementById("selectStartHourId").style.borderColor = "#ff0000";
+			document.getElementById("selectEndHourId").style.borderColor = "#ff0000";
+			statusCheckCollision.innerText = "Horário inválido";
+			statusCheckCollision.style.color = "#ff0000";
+		    }
+		  
+		  
+
+	    if(checkInputs(myInputs) && start_input.value < end_input.value) {
+	      btnModalCreate.disabled = false;
+	    } else {
+	      btnModalCreate.disabled = true;
+	    }
+
+	  });
+
+	});
+	
+
 	var myModal = new bootstrap.Modal(document.getElementById('modalCreate'));
 	myModal.show();
 }
