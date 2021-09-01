@@ -36,7 +36,7 @@ async function createLine(professor) {
 	let btnDelete = document.createElement("button");
 	btnDelete.textContent = "Deletar";
 	btnDelete.classList.add("btn");
-	btnDelete.classList.add("btn-danger");
+	btnDelete.classList.add("btn-danger-item");
 
 	btnDelete.addEventListener("click", () => btnDelete_click(professor));
 
