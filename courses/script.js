@@ -72,6 +72,16 @@ function btnUpdate_click(cour) {
 
 	document.getElementById("txtName").value = cour.name;
 	actualId = cour.id;
+	
+	document.getElementById("btnModalCreate").disabled = true;
+	document.getElementById("txtName").addEventListener("input", function(event){
+    	var conteudo = document.getElementById("txtName").value;
+   	if (conteudo !== null && conteudo !== '') {      
+    	  document.getElementById("btnModalCreate").disabled = false;
+  	} else {
+   	   document.getElementById("btnModalCreate").disabled = true;
+   	}
+	});
 
 	var myModal = new bootstrap.Modal(document.getElementById('modalCreate'))
 	myModal.show();
