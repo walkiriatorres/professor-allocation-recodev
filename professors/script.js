@@ -114,6 +114,27 @@ function btnUpdate_click(professor){
 
 	actualId = professor.id;
 
+	document.getElementById("btnModalCreate").disabled = true;
+
+	var cpf_input = document.getElementById("txtCPF");
+	var professor_input = document.getElementById("txtName");
+	var department_input = document.getElementById("selectDepartmentId");
+	var minhasInputs = [professor_input, cpf_input, department_input];
+
+	minhasInputs.forEach(function(input) {
+    
+	  input.addEventListener("blur", function() {
+
+	    if(checkInputs(minhasInputs) && validarCPF(valor_do_cpf) ) {
+	      btnModalCreate.disabled = false;
+	    } else {
+	      btnModalCreate.disabled = true;
+	    }
+
+	  });
+
+	});
+
 	var myModal = new bootstrap.Modal(document.getElementById('modalCreate'));
 	myModal.show();
 }
