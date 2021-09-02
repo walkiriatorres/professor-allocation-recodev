@@ -322,12 +322,13 @@ const btnDeleteAll = document.getElementById("btnDeleteAllProfessors");
 btnDeleteAll.addEventListener("click", btnDeleteAll_click );
 
 function btnDeleteAll_click(){
+	
 
 	const title = document.getElementById("modalDeleteTitle");
 	title.textContent = "Deletar todos Professores";
 
 	const txtProfessor = document.getElementById("txtConfirmModalDelete");
-	txtProfessor.hide();
+	txtProfessor.textContent = "deletar todos professores";
 	
 	const txtProfessor2 = document.getElementById("txtConfirmModalDeleteAll");
 	txtProfessor2.textContent = "deletar todos os professores?";	
