@@ -198,7 +198,7 @@ function btnDelete_click(allocation) {
 	actualId = allocation.id;
 	
 	const txtProfessor = document.getElementById("txtDeleteProfessor");
-	txtProfessor.textContent = `${allocation.professor.name} - ${allocation.course.name} : ${allocation.start.substr(0,5)} - ${allocation.end.substr(0,5)} `;
+	txtProfessor.textContent = `${allocation.professor.name} - ${allocation.course.name}: ${allocation.start.substr(0,5)} - ${allocation.end.substr(0,5)} `;
 	
 	var myModalDelete = new bootstrap.Modal(document.getElementById('modalDelete'))
 	myModalDelete.show();
