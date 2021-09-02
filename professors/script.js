@@ -318,3 +318,27 @@ function sortTable(table, dir, n) {
   }
 }
 
+const btnDeleteAll = document.getElementById("btnDeleteAllProfessors");
+btnDeleteAll.addEventListener("click", btnDeleteAll_click );
+
+function btnDeleteAll_click(){
+
+	const title = document.getElementById("modalDeleteTitle");
+	title.textContent = "Deletar todos Professores";
+
+	const txtProfessor = document.getElementById("txtDeleteProfessor");
+	txtProfessor.textContent = "Todos os professores";
+
+	var myModal = new bootstrap.Modal(document.getElementById('modalDelete'));
+	myModal.show();
+}
+const btnConfirmDeleteAll= document.getElementById("btnModalDelete");
+btnConfirmDeleteAll.addEventListener("click", applyDeleteAllProfessors);
+
+async function applyDeleteAllProfessors(){
+	const result = await deleteData(route);
+
+	if (result) {
+		refreshTable();
+	}
+}
