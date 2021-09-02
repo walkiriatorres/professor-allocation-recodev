@@ -326,8 +326,11 @@ function btnDeleteAll_click(){
 	const title = document.getElementById("modalDeleteTitle");
 	title.textContent = "Deletar todos Professores";
 
-	const txtProfessor = document.getElementById("txtDeleteProfessor");
-	txtProfessor.textContent = "Todos os professores";
+	const txtProfessor = document.getElementById("txtConfirmModalDelete");
+	txtProfessor.hide();
+	
+	const txtProfessor2 = document.getElementById("txtConfirmModalDeleteAll");
+	txtProfessor2.textContent = "deletar todos os professores?";	
 
 	var myModal = new bootstrap.Modal(document.getElementById('modalDelete'));
 	myModal.show();
