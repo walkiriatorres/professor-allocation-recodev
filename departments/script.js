@@ -71,7 +71,7 @@ function btnAdd_click() {
 
 function btnUpdate_click(dep) {
 	const title = document.getElementById("modalCreateTitle");
-	title.textContent = "Atualizar Departamento";
+	title.textContent = "Editar Departamento";
 
 	document.getElementById("txtName").value = dep.name;
 	actualId = dep.id;
