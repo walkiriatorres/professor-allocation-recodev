@@ -1,6 +1,4 @@
-p{
-	font-size: 12px;
-}
+
 
 #btnAdd{
 	margin-bottom: 10px;
@@ -52,4 +50,8 @@ p{
 .fa-trash-alt {
     font-size: 25px;
     margin-left: 23px;
+}
+
+p{
+	font-size: 12px;
 }
