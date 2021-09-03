@@ -55,7 +55,7 @@ async function loadTable(){
 function btnAdd_click() {
 	document.getElementById("txtName").value = "";	
 	const title = document.getElementById("modalCreateTitle");
-	title.textContent = "Criar Departamento";
+	title.textContent = "Adicionar Departamento";
 	actualId = undefined;
 	
 	document.getElementById("btnModalCreate").disabled = true;
