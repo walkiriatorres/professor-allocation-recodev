@@ -106,7 +106,7 @@ function btnAdd_click() {
 
 function btnUpdate_click(professor){
 	const title = document.getElementById("modalCreateTitle");
-	title.textContent = "Atualizar Professor";
+	title.textContent = "Editar Professor";
 
 	document.getElementById("txtName").value = professor.name;
 	document.getElementById("txtCPF").value = professor.cpf;
