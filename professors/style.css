@@ -76,7 +76,3 @@ p{
   font-size: 25px;
   margin-left: 23px;
 }
-.required-input:after{
-  content:" *"; 
-  color: red;
-}
