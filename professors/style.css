@@ -1,4 +1,4 @@
-#btnAdd, #btnDeleteAll{
+#btnAdd{
 	margin-bottom: 10px;
 }
 .container{
@@ -13,9 +13,6 @@ p{
 	color: #fff;
 	background-color: #027368;
 	border-color: #027368;
-}
-#btnDeleteAll{
-	margin-bottom: 10px;
 }
 
 #btnAdd:hover {
@@ -57,14 +54,13 @@ p{
 .btn-secondary {
     color: rgb(0, 0, 0);
     background-color: #ffffff;
-    border-style: none;
-    
+    border-color: #6c757d;   
 }
 
 .btn-secondary:hover {
     color: rgb(255, 255, 255);
     background-color: #6c757d;
-    border-style: none;	
+    border-style: #6c757d;	
 }
 
 .fa-edit {
