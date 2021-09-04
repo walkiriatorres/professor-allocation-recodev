@@ -7,6 +7,9 @@
 #btnAdd:hover {
 	background-color: #02403A;
 }
+#btnDeleteAllDepartment{
+	margin-bottom: 10px;
+}
 .container{
 	margin-top:  80px;
 }
