@@ -79,7 +79,7 @@ function btnAdd_click() {
 	document.getElementById("txtCPF").value = "";
 	document.getElementById("selectDepartmentId").value = "selected";	
 	const title = document.getElementById("modalCreateTitle");
-	title.textContent = "Criar Professor";
+	title.textContent = "Adicionar Professor";
 	actualId = undefined;
 	
 	document.getElementById("btnModalCreate").disabled = true;
