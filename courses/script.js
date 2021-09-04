@@ -90,7 +90,9 @@ function iconDelete_click(cour) {
 	actualId = cour.id;	
 
 	const txtCourse = document.getElementById('txtDeleteCourse');
-	txtCourse.textContent = cour.name;
+	txtCourse.textContent = cour.name;	
+	document.getElementById('msgConfirmDelete').hidden=false;
+	document.getElementById('msgConfirmDeleteAll').hidden=true;
 
 	var myModal = new bootstrap.Modal(document.getElementById('modalDelete'))
 	myModal.show();
@@ -102,11 +104,6 @@ async function applyAddProfessor() {
 
 	let result;
 
-	if (!name){
-		alert("The course name is required!");
-		return;
-	}
-
 	if (!actualId) {
 		result = await create(route, { name });
 	} else {
@@ -117,7 +114,13 @@ async function applyAddProfessor() {
 	}
 }
 async function applyDeleteProfessor() {
+	let result
+	
+	if (!actualId) {
+		result = await deleteData(route);
+	} else {
 	const result = await deleteData(route + actualId);
+	}
 
 	if (result) {
 		refreshTable();
@@ -131,6 +134,23 @@ confirmSave.addEventListener("click", applyAddProfessor);
 
 const confirmDelete = document.getElementById("btnModalDelete");
 confirmDelete.addEventListener("click", applyDeleteProfessor);
+
+const btnDeleteAll = document.getElementById("btnDeleteAllCourses");
+btnDeleteAll.addEventListener("click", () => btnDeleteAll_click());
+
+function btnDeleteAll_click() {
+	actualId = undefined;
+	let txtDepartment = document.getElementById('txtDeleteCourse');
+	txtDepartment.textContent = "";
+	
+	const title = document.getElementById("modalDeleteTitle");
+	title.textContent = "Deletar Todos Cursos";
+	document.getElementById('msgConfirmDelete').hidden=true;
+	document.getElementById('msgConfirmDeleteAll').hidden=false;
+
+	var myModal = new bootstrap.Modal(document.getElementById('modalDelete'))
+	myModal.show();
+}
 
 loadTable();
 
