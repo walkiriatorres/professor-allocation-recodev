@@ -119,7 +119,7 @@ async function applyDeleteProfessor() {
 	if (!actualId) {
 		result = await deleteData(route);
 	} else {
-	const result = await deleteData(route + actualId);
+		result = await deleteData(route + actualId);
 	}
 
 	if (result) {
