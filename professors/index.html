@@ -64,6 +64,7 @@
         </tr>
       </thead>
       <tbody id="tableBody"></tbody>
+      <button id="btnDeleteAllDepartments" type="button" class="btn btn-danger">Deletar Todos Professores</button>
     </table>
   </main>
   <!-- Modal CREATE and UPDATE-->
@@ -120,10 +121,13 @@
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
-        <div class="modal-body" id="txtConfirmModalDelete">
-          <p>Você gostaria de deletar: <strong id="txtDeleteProfessor"></strong> ?</p>
+        <div id="msgConfirmDelete" class="modal-body">
+          <p>Você quer deletar o professor: <strong id="txtDeleteDepartment"></strong>?</p>
         </div>
-        <div class="modal-body" id="txtConfirmModalDeleteAll"></div>
+        <div id="msgConfirmDeleteAll" class="modal-body">
+          <p>Você quer deletar todos os professores?</p>
+          <p>Ao confirmar esta opção você deletará também todas alocações.</p>
+        </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar
           </button>
