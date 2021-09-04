@@ -93,6 +93,8 @@ function iconDelete_click(dep) {
 
 	let txtDepartment = document.getElementById('txtDeleteDepartment');
 	txtDepartment.textContent = dep.name;
+	
+	document.getElementById('msgConfirmDeleteAll').hidden=true;
 
 	var myModal = new bootstrap.Modal(document.getElementById('modalDelete'))
 	myModal.show();
