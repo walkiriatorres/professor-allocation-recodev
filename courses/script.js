@@ -68,7 +68,7 @@ function btnAdd_click() {
 }
 function btnUpdate_click(cour) {
 	const title = document.getElementById("modalCreateTitle");
-	title.textContent = "Atualizar Curso";
+	title.textContent = "Editar Curso";
 
 	document.getElementById("txtName").value = cour.name;
 	actualId = cour.id;
