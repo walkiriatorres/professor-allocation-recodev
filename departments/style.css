@@ -41,6 +41,17 @@
     background-color: #dc3545;
     border-color: #dc3545;
 }
+.btn-secondary {
+    color: rgb(0, 0, 0);
+    background-color: #ffffff;
+    border-color: #6c757d;   
+}
+
+.btn-secondary:hover {
+    color: rgb(255, 255, 255);
+    background-color: #6c757d;
+    border-style: #6c757d;
+}
 
 .fa-edit {
     font-size: 25px;
