@@ -35,25 +35,23 @@ async function createLine(allocation) {
 	linha.appendChild(colunaHour);
 
 	let colunaEdit = document.createElement("td");
-	let btnEdit = document.createElement("button");
-	btnEdit.textContent = "Editar";
-	btnEdit.classList.add("btn");
-	btnEdit.classList.add("btn-info");
+	let iconEdit = document.createElement("i");
+	iconEdit.classList.add("far");
+	iconEdit.classList.add("fa-edit");
 
-	btnEdit.addEventListener("click", () => btnUpdate_click(allocation));
+	iconEdit.addEventListener("click", () => iconUpdate_click(allocation));
 
-	colunaEdit.appendChild(btnEdit);
+	colunaEdit.appendChild(iconEdit);
 	linha.appendChild(colunaEdit);
 
 	let colunaDelete = document.createElement("td");
-	let btnDelete = document.createElement("button");
-	btnDelete.textContent = "Deletar";
-	btnDelete.classList.add("btn");
-	btnDelete.classList.add("btn-danger");
+	let iconDelete = document.createElement("i");
+	iconDelete.classList.add("far");
+	iconDelete.classList.add("fa-trash-alt");
 
-	btnDelete.addEventListener("click", () => btnDelete_click(allocation));
+	iconDelete.addEventListener("click", () => iconDelete_click(allocation));
 
-	colunaDelete.appendChild(btnDelete);
+	colunaDelete.appendChild(iconDelete);
 	linha.appendChild(colunaDelete);
 
 	table.insertBefore(linha, table.firstChild);
@@ -140,7 +138,7 @@ function btnAdd_click() {
 	
 }
 
-function btnUpdate_click(allocation){
+function iconUpdate_click(allocation){
 	const title = document.getElementById("modalCreateTitle");
 	title.textContent = "Atualizar Aula";
 
@@ -194,7 +192,7 @@ function btnUpdate_click(allocation){
 	myModal.show();
 }
 
-function btnDelete_click(allocation) {
+function iconDelete_click(allocation) {
 	actualId = allocation.id;
 	
 	const txtProfessor = document.getElementById("txtDeleteProfessor");
