@@ -134,6 +134,17 @@ confirmSave.addEventListener("click", applyAddProfessor);
 const confirmDelete = document.getElementById("btnModalDelete");
 confirmDelete.addEventListener("click", applyDeleteProfessor);
 
+const btnDeleteAll = document.getElementById("btnDeleteAllDepartments");
+btnDeleteAll.addEventListener("click", () => btnDeleteAll_click());
+
+function btnDeleteAll_click() {
+	const title = document.getElementById("modalDeleteTitle");
+	title.textContent = "Deletar Todos Departamentos";
+
+	var myModal = new bootstrap.Modal(document.getElementById('modalDelete'))
+	myModal.show();
+}
+
 loadTable();
 
 
