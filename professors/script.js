@@ -141,7 +141,9 @@ function iconDelete_click(professor) {
 	actualId = professor.id;
 
 	const txtProfessor = document.getElementById("txtDeleteProfessor");
-	txtProfessor.textContent = professor.name;	
+	txtProfessor.textContent = professor.name;
+	document.getElementById('msgConfirmDelete').hidden=false;
+	document.getElementById('msgConfirmDeleteAll').hidden=true;
 
 	var myModalDelete = new bootstrap.Modal(document.getElementById('modalDelete'));
 	myModalDelete.show();
@@ -151,7 +153,6 @@ async function applyAddProfessor(){
 	const name = document.getElementById("txtName").value;
 	const cpf = document.getElementById("txtCPF").value;
 	const idDepartment = document.getElementById("selectDepartmentId").value;
-
 	
 	let result;
 
@@ -177,7 +178,13 @@ async function applyAddProfessor(){
 }
 
 async function applyDeleteProfessor(){
-	const result = await deleteData(route + actualId);
+	let result;
+	
+	if (!actualId) {
+		result = await deleteData(route);
+	} else {	
+		result = await deleteData(route + actualId);
+	}
 
 	if (result) {
 		refreshTable();
@@ -191,6 +198,23 @@ confirmSave.addEventListener("click", applyAddProfessor);
 
 const confirmDelete = document.getElementById("btnModalDelete");
 confirmDelete.addEventListener("click", applyDeleteProfessor);
+
+const btnDeleteAll = document.getElementById("btnDeleteAllProfessors");
+btnDeleteAll.addEventListener("click", () => btnDeleteAll_click());
+
+function btnDeleteAll_click() {
+	actualId = undefined;
+	let txtDepartment = document.getElementById('txtDeleteProfessor');
+	txtDepartment.textContent = "";
+	
+	const title = document.getElementById("modalDeleteTitle");
+	title.textContent = "Deletar Todos Departamentos";
+	document.getElementById('msgConfirmDelete').hidden=true;
+	document.getElementById('msgConfirmDeleteAll').hidden=false;
+
+	var myModal = new bootstrap.Modal(document.getElementById('modalDelete'))
+	myModal.show();
+}
 
 async function loadSelectDepartmentId() {
 	const routeDepartment = "/departments/";
