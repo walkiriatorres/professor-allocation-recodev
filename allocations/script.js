@@ -195,8 +195,8 @@ function iconUpdate_click(allocation){
 function iconDelete_click(allocation) {
 	actualId = allocation.id;
 	
-	const txtProfessor = document.getElementById("txtDeleteProfessor");
-	txtProfessor.textContent = `${allocation.professor.name} - ${allocation.course.name}: ${allocation.start.substr(0,5)} - ${allocation.end.substr(0,5)} `;
+	const txtAllocation = document.getElementById("txtDeleteAllocation");
+	txtAllocation.textContent = `${allocation.professor.name} - ${allocation.course.name}: ${allocation.start.substr(0,5)} - ${allocation.end.substr(0,5)} `;
 	document.getElementById('msgConfirmDelete').hidden=false;
 	document.getElementById('msgConfirmDeleteAll').hidden=true;
 	
