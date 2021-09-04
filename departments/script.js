@@ -91,7 +91,7 @@ function iconUpdate_click(dep) {
 function iconDelete_click(dep) {
 	actualId = dep.id;	
 
-	const txtDepartment = document.getElementById('txtDeleteDepartment');
+	let txtDepartment = document.getElementById('txtDeleteDepartment');
 	txtDepartment.textContent = dep.name;
 
 	var myModal = new bootstrap.Modal(document.getElementById('modalDelete'))
@@ -145,6 +145,10 @@ const btnDeleteAll = document.getElementById("btnDeleteAllDepartments");
 btnDeleteAll.addEventListener("click", () => btnDeleteAll_click());
 
 function btnDeleteAll_click() {
+	actualId = undefined;
+	let txtDepartment = document.getElementById('txtDeleteDepartment');
+	txtDepartment.textContent = "";
+	
 	const title = document.getElementById("modalDeleteTitle");
 	title.textContent = "Deletar Todos Departamentos";
 
