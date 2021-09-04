@@ -118,7 +118,14 @@ async function applyAddProfessor() {
 }
 
 async function applyDeleteProfessor(){
-	const result = await deleteData(route + actualId);
+	let result;
+	
+	if (!actualId) {
+		result = await deleteData(route);
+	} else {
+	
+		result = await deleteData(route + actualId);
+	}
 
 	if (result) {
 		refreshTable();
