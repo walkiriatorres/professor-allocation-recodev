@@ -92,8 +92,7 @@ function iconDelete_click(dep) {
 	actualId = dep.id;	
 
 	let txtDepartment = document.getElementById('txtDeleteDepartment');
-	txtDepartment.textContent = dep.name;
-	
+	txtDepartment.textContent = dep.name;	
 	document.getElementById('msgConfirmDelete').hidden=false;
 	document.getElementById('msgConfirmDeleteAll').hidden=true;
 
@@ -104,11 +103,6 @@ async function applyAddProfessor() {
 	const name = document.getElementById("txtName").value;
 
 	let result;
-
-	if (!name){
-		alert("The department name is required!");
-		return;	
-	}
 
 	if (!actualId) {
 		result = await create(route, { name });
@@ -125,8 +119,7 @@ async function applyDeleteProfessor(){
 	
 	if (!actualId) {
 		result = await deleteData(route);
-	} else {
-	
+	} else {	
 		result = await deleteData(route + actualId);
 	}
 
