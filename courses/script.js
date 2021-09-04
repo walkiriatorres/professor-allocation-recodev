@@ -53,7 +53,7 @@ async function loadTable(){
 function btnAdd_click() {
 	document.getElementById("txtName").value = "";	
 	const title = document.getElementById("modalCreateTitle");
-	title.textContent = "Criar Curso";
+	title.textContent = "Adicionar Curso";
 	actualId = undefined;
 	
 	document.getElementById("btnModalCreate").disabled = true;
