@@ -197,6 +197,8 @@ function iconDelete_click(allocation) {
 	
 	const txtProfessor = document.getElementById("txtDeleteProfessor");
 	txtProfessor.textContent = `${allocation.professor.name} - ${allocation.course.name}: ${allocation.start.substr(0,5)} - ${allocation.end.substr(0,5)} `;
+	document.getElementById('msgConfirmDelete').hidden=false;
+	document.getElementById('msgConfirmDeleteAll').hidden=true;
 	
 	var myModalDelete = new bootstrap.Modal(document.getElementById('modalDelete'))
 	myModalDelete.show();
@@ -236,7 +238,13 @@ async function applyAddAllocation(){
 }
 
 async function applyDeleteAllocation(){
-	const result = await deleteData(route + actualId);
+	let result;
+	
+	if (!actualId) {
+		result = await deleteData(route);
+	} else {	
+		result = await deleteData(route + actualId);
+	}
 
 	if (result) {
 		refreshTable();
@@ -251,6 +259,23 @@ confirmSave.addEventListener("click", applyAddAllocation);
 
 const confirmDelete = document.getElementById("btnModalDelete");
 confirmDelete.addEventListener("click", applyDeleteAllocation);
+
+const btnDeleteAll = document.getElementById("btnDeleteAllAllocations");
+btnDeleteAll.addEventListener("click", () => btnDeleteAll_click());
+
+function btnDeleteAll_click() {
+	actualId = undefined;
+	let txtDepartment = document.getElementById('txtDeleteAllocation');
+	txtDepartment.textContent = "";
+	
+	const title = document.getElementById("modalDeleteTitle");
+	title.textContent = "Deletar Todos Departamentos";
+	document.getElementById('msgConfirmDelete').hidden=true;
+	document.getElementById('msgConfirmDeleteAll').hidden=false;
+
+	var myModal = new bootstrap.Modal(document.getElementById('modalDelete'))
+	myModal.show();
+}
 
 async function loadSelectProfessorId() {
 	const routeProfessor = "/professors/";
