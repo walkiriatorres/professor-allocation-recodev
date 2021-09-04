@@ -153,6 +153,7 @@ function btnDeleteAll_click() {
 	
 	const title = document.getElementById("modalDeleteTitle");
 	title.textContent = "Deletar Todos Departamentos";
+	document.getElementById('msgConfirmDelete').hidden=true;
 
 	var myModal = new bootstrap.Modal(document.getElementById('modalDelete'))
 	myModal.show();
