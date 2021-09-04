@@ -98,7 +98,7 @@ function btnAdd_click() {
 	document.getElementById("selectStartHourId").value = "selected";
 	document.getElementById("selectEndHourId").value = "selected";	
 	const title = document.getElementById("modalCreateTitle");
-	title.textContent = "Criar Aula";
+	title.textContent = "Adicionar Aula";
 	actualId = undefined;
 	
 	document.getElementById("btnModalCreate").disabled = true;
