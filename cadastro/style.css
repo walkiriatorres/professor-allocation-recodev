@@ -81,6 +81,13 @@ h1{
 
 }
 
+#container-a{
+    display: inline-block;
+}
+#container-b{
+    display: inline-block;
+}
+
 button{
     background-color: transparent;
     border-color: #fff;
@@ -103,7 +110,7 @@ button:hover{
 }
 
 .justify-center{
-    display: flex;
+    display:inline-flex;
     justify-content: center;
 }
 
