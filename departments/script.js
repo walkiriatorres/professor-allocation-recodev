@@ -23,7 +23,6 @@ async function createLine(dep) {
 
 	let colunaDelete = document.createElement("td");
 	let iconDelete = document.createElement("i");
-	iconDelete.textContent = "Deletar";
 	iconDelete.classList.add("far");
 	iconDelete.classList.add("fa-trash-alt");
 
