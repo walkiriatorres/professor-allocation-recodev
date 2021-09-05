@@ -1,6 +1,4 @@
-#btnAdd{
-	margin-bottom: 10px;
-}
+
 .container{
 	margin-top:  80px;
 }
@@ -17,6 +15,9 @@ p{
 
 #btnAdd:hover {
 	background-color: #02403A;
+}
+#btnDeleteAllProfessors{
+	margin-bottom: 10px;
 }
 .container{
 	margin-top:  80px;
@@ -71,4 +72,7 @@ p{
 .fa-trash-alt {
   font-size: 25px;
   margin-left: 23px;
+}
+.inlineBlock{
+  display: inline-block;
 }
