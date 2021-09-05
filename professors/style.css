@@ -76,3 +76,6 @@ p{
 .inline-Block{
   display: inline-block;
 }
+section {
+  display: inline-block;
+}
