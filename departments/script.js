@@ -43,14 +43,14 @@ async function refreshTable() {
 }
 
 async function loadTable(){
-	let variavelDaIpunt = document.getElementById("txtSearch").value;
-	let filtro = route;
+	let txtSearch = document.getElementById("txtSearch").value;
+	let filter = route;
 
-	if (variavelDaIpunt) {
-		filtro = route + "?partName=" + variavelDaIpunt;
+	if (txtSearch) {
+		filter = route + "?partName=" + txtSearch;
 	} 
 
-	let data = await getData(filtro);
+	let data = await getData(filter);
 	
 	if(!data.length) {
 		document.getElementById("showNotData").hidden=false;
