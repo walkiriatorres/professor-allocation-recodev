@@ -67,11 +67,23 @@
         onclick="refreshTable()"     
         ><i class="fa fa-search"></i>
         </button>
+        <button
+        id="btnClearSearch"
+        class="btn btn-outline-secondary"
+        type="button"
+        onclick="clearSearch()"     
+        ><i class="fa fa-times"></i>
+        </button>
     </div>   
     <button id="btnAdd" type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#modalCreate">
       Adicionar
     </button>
     <button id="btnDeleteAllCourses" type="button" class="btn btn-danger">Deletar Todos Cursos</button>
+    <hr/>
+    <div id="showNotData">
+        <hr/>
+        <h2>Não há dados</h2>
+    </div>
     <table class="table table-striped">
       <thead>
         <tr>
