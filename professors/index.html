@@ -67,8 +67,7 @@
         data-bs-toggle="modal"
         data-bs-target="#modalCreate"
       >Deletar todos professores</button>
-      <section class="input-group mb-3 inline-block section">
-        <label for="txtSearch">Pesquisar Curso por Nome</label>
+      <div class="input-group mb-3">
         <input
         id="txtSearch"
         type="text"
@@ -81,7 +80,7 @@
         class="btn btn-outline-secondary"
         type="button"
         onclick="refreshTable()"     
-        ><i class="far fa-search"></i>
+        >Pesquisar
         </button>
         <button
         id="btnClearSearch"
@@ -90,9 +89,8 @@
         onclick="clearSearch()"     
         >Limpar Pesquisa
         </button>
-      </section> 
-      
-        <hr>
+      </div>    
+      <hr>
 </div>
     <table class="table table-striped">
       <thead>
