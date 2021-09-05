@@ -65,11 +65,31 @@ async function refreshTable() {
 }
 
 async function loadTable(){
-	let meusDados = await getData(route);
+	let txtSearch = document.getElementById("txtSearch").value;
+	let filter = route;
+
+	if (txtSearch) {
+		filter = route + "?partName=" + txtSearch;
+	} 
+
+	let data = await getData(filter);
 	
-	for (let item of meusDados){
+	if(!data.length) {
+		document.getElementById("showNotData").hidden=false;
+		document.getElementById("table").hidden=true;
+	} else {
+		document.getElementById("showNotData").hidden=true;
+		document.getElementById("table").hidden=false;
+	}
+	
+	for (let item of data){
 		createLine(item);
 	}
+}
+
+function clearSearch() {
+	document.getElementById("txtSearch").value = "";
+	refreshTable();
 }
 
 function checkInputs(inputs) {
