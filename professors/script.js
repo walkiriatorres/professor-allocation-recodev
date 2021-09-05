@@ -52,9 +52,16 @@ async function refreshTable() {
 }
 
 async function loadTable(){
-	let meusDados = await getData(route);
+	let variavelDaIpunt = document.getElementById("txtSearch").value;
+	let filtro = route;
+
+	if (variavelDaIpunt) {
+		filtro = route + "?partName=" + variavelDaIpunt;
+	} 
+
+	let data = await getData(filtro);
 	
-	for (let item of meusDados){
+	for (let item of data){
 		createLine(item);
 	}
 }
