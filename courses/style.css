@@ -13,6 +13,9 @@
 #btnAdd:hover {
 	background-color: #02403A;
 }
+#btnDeleteAllCourses{
+	margin-bottom: 10px;
+}
 .container{
 	margin-top:  80px;
 }
