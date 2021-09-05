@@ -50,17 +50,25 @@
   </nav>
   <main class="container">
     <h1>PROFESSORES</h1>
-    <hr>
-    <button id="btnAdd" type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#modalCreate">
-      Adicionar
-    </button><button id="btnDeleteAllProfessors" type="button" class="btn btn-danger">Deletar Todos Professores</button>
-    
-    <div class="input-group mb-3">        
+    <div id="funcionalidades" class="inline-block">
+	<hr>
+	<h1>FUNCIONALIDADES</h1>
+	<button
+        id="btnAdd"
+        type="button"
+        class="btn btn-success"
+        data-bs-toggle="modal"
+        data-bs-target="#modalCreate"
+      >
+       Add Professor
+      </button>
+      <section class="input-group mb-3 inline-block section">
+        <label for="txtSearch">Pesquisar Curso por Nome</label>
         <input
         id="txtSearch"
         type="text"
         class="form-control"
-        placeholder="Nome"
+        placeholder="Pesquisar"
         aria-label="Pesquisar"
         aria-describedby="btnSearch">
         <button
@@ -68,17 +76,26 @@
         class="btn btn-outline-secondary"
         type="button"
         onclick="refreshTable()"     
-        ><i class="fa fa-search"></i>
+        >Pesquisar
         </button>
         <button
         id="btnClearSearch"
         class="btn btn-outline-secondary"
         type="button"
         onclick="clearSearch()"     
-        ><i class="fa fa-times"></i>
+        >Limpar Pesquisa
         </button>
-    </div>
-    <hr>
+      </section> 
+      <button
+        id="btnDeleteAllProfessors"
+        type="button"
+        class="btn btn-danger"
+        data-bs-toggle="modal"
+        data-bs-target="#modalCreate"
+      >Deletar todos professores
+        </button>
+        <hr>
+</div>
     <table class="table table-striped">
       <thead>
         <tr>
