@@ -53,6 +53,22 @@
     <button id="btnAdd" type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#modalCreate">
       Adicionar
     </button>
+    <div class="input-group mb-3">
+        <input
+        id="txtSearch"
+        type="text"
+        class="form-control"
+        placeholder="Pesquisar"
+        aria-label="Pesquisar"
+        aria-describedby="btnSearch">
+        <button
+        id="btnSearch"
+        class="btn btn-outline-secondary"
+        type="button"
+        onclick="refreshTable()"     
+        >Pesquisar
+        </button>
+    </div>    
     <table class="table table-striped">
       <thead>
         <tr>
