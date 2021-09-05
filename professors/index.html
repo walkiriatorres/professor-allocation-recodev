@@ -49,7 +49,9 @@
     </div>
   </nav>
   <main class="container">
-    <h1>PROFESSORES</h1>
+    <h1>PROFESSORES</h1><button id="btnAdd" type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#modalCreate">
+      Adicionar
+    </button><button id="btnDeleteAllProfessors" type="button" class="btn btn-danger">Deletar Todos Professores</button>
     <label for="txtSearch">Pesquisar Professor por Nome: </label>
     <div class="input-group mb-3">        
         <input
@@ -74,10 +76,7 @@
         ><i class="fa fa-times"></i>
         </button>
     </div>    
-    <button id="btnAdd" type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#modalCreate">
-      Adicionar
-    </button>
-    <button id="btnDeleteAllProfessors" type="button" class="btn btn-danger">Deletar Todos Professores</button>
+    
     <table class="table table-striped">
       <thead>
         <tr>
