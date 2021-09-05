@@ -50,6 +50,27 @@
   </nav>
   <main class="container">
     <h1>PROFESSORES</h1>
+    <label for="txtSearch">Pesquisar Professor: </label>
+    <div class="input-group mb-3">
+        <input
+        id="txtSearch"
+        type="text"
+        class="form-control"
+        placeholder="Professor"
+        aria-label="Pesquisar"
+        aria-describedby="btnSearch">
+        <button
+        id="btnSearch"
+        class="btn btn-outline-secondary"
+        type="button"
+        onclick="refreshTable()"     
+        ><i class="fa fa-search"></i>
+        </button>
+    </div>   
+    <button id="btnAdd" type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#modalCreate">
+      Adicionar
+    </button>
+    <button id="btnDeleteAllProfessors" type="button" class="btn btn-danger">Deletar Todos Professores</button>
     
 	
     <table class="table table-striped">
