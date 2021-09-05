@@ -54,6 +54,7 @@ async function loadTable(){
 	
 	for (let item of data){
 		createLine(item);
+	}
 }
 
 function btnAdd_click() {
