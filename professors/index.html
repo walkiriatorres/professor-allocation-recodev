@@ -52,16 +52,21 @@
     <h1>PROFESSORES</h1>
     <div id="funcionalidades" class="inline-block">
 	<hr>
-	<h1>FUNCIONALIDADES</h1>
 	<button
         id="btnAdd"
         type="button"
         class="btn btn-success"
         data-bs-toggle="modal"
         data-bs-target="#modalCreate"
-      >
-       Add Professor
+      >Adicionar
       </button>
+      <button
+        id="btnDeleteAllProfessors"
+        type="button"
+        class="btn btn-danger"
+        data-bs-toggle="modal"
+        data-bs-target="#modalCreate"
+      >Deletar todos professores</button>
       <section class="input-group mb-3 inline-block section">
         <label for="txtSearch">Pesquisar Curso por Nome</label>
         <input
@@ -86,14 +91,7 @@
         >Limpar Pesquisa
         </button>
       </section> 
-      <button
-        id="btnDeleteAllProfessors"
-        type="button"
-        class="btn btn-danger"
-        data-bs-toggle="modal"
-        data-bs-target="#modalCreate"
-      >Deletar todos professores
-        </button>
+      
         <hr>
 </div>
     <table class="table table-striped">
