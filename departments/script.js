@@ -161,23 +161,3 @@ function btnDeleteAll_click() {
 }
 
 loadTable();
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
