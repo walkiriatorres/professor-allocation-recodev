@@ -61,6 +61,14 @@ async function loadTable(){
 
 	let data = await getData(filtro);
 	
+	if(data.length < 1) {
+		document.getElementById("showNotData").hidden=false;
+		document.getElementById("table").hidden=true;
+	} else {
+		document.getElementById("showNotData").hidden=true;
+		document.getElementById("table").hidden=false;
+	}
+	
 	for (let item of data){
 		createLine(item);
 	}
