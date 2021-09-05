@@ -66,6 +66,11 @@ async function loadTable(){
 	}
 }
 
+function clearSearch() {
+	document.getElementById("txtSearch").value = "";
+	refreshTable();
+}
+
 function checkInputs(inputs) {
 
   var filled = true;
