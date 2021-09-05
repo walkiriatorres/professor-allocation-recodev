@@ -156,12 +156,14 @@ a:hover{
     border: 2px solid rgb(207,53,53) !important;
   }
 
-  .left .fa-eye{
-    position: absolute;
-    top: 385px;
-    right: 740px;
-    cursor: pointer;
-    color:#fff
+ 
+
+.left .fa-eye{
+  position: absolute;
+  top: 400px;
+  right: 690px;
+  cursor: pointer;
+  color:#fff
 }
 
 #msgError{
