@@ -18,6 +18,8 @@ body{
     justify-content: center;
     width: 100%;
     margin-top: 100px;
+    text-align: center;
+
 
 }
 
@@ -83,10 +85,16 @@ h1{
 
 #container-a{
     display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
 }
 #container-b{
     display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+    
 }
+
 
 button{
     background-color: transparent;
@@ -101,6 +109,7 @@ button{
     outline:none;
     transition: all .4s ease-out;
 
+
 }
 
 button:hover{
@@ -108,12 +117,13 @@ button:hover{
     color: #fff;
      
 }
+/*
+    .justify-center{
+        display:inline-flex;
+        justify-content: center;
+    }
 
-.justify-center{
-    display:inline-flex;
-    justify-content: center;
-}
-
+    */
     
 
      input{
