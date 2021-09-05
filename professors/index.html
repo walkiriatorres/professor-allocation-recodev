@@ -49,13 +49,17 @@
     </div>
   </nav>
   <main class="container">
-    <h1>PROFESSORES</h1><button id="btnAdd" type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#modalCreate">
+    <h1>PROFESSORES</h1>
+    <button id="btnAdd" type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#modalCreate">
       Adicionar
-    </button><button id="btnDeleteAllProfessors" type="button" class="btn btn-danger">Deletar Todos Professores</button><input
+    </button><button id="btnDeleteAllProfessors" type="button" class="btn btn-danger">Deletar Todos Professores</button>    
+    <div class="input-group mb-3">
+        <label for="txtSearch">Pesquisar Curso por Nome</label>
+        <input
         id="txtSearch"
         type="text"
         class="form-control"
-        placeholder="Nome do Professor"
+        placeholder="Nome"
         aria-label="Pesquisar"
         aria-describedby="btnSearch">
         <button
@@ -72,8 +76,7 @@
         onclick="clearSearch()"     
         ><i class="fa fa-times"></i>
         </button>
-  
-    
+    </div>    
     <table class="table table-striped">
       <thead>
         <tr>
