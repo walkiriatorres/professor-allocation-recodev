@@ -42,19 +42,33 @@ async function refreshTable() {
 }
 
 async function loadTable(){
-	let variavelDaIpunt = document.getElementById("txtSearch").value;
-	let filtro = route;
+	let txtSearch = document.getElementById("txtSearch").value;
+	let filter = route;
 
-	if (variavelDaIpunt) {
-		filtro = route + "?partName=" + variavelDaIpunt;
+	if (txtSearch) {
+		filter = route + "?partName=" + txtSearch;
 	} 
 
-	let data = await getData(filtro);
+	let data = await getData(filter);
+	
+	if(!data.length) {
+		document.getElementById("showNotData").hidden=false;
+		document.getElementById("table").hidden=true;
+	} else {
+		document.getElementById("showNotData").hidden=true;
+		document.getElementById("table").hidden=false;
+	}
 	
 	for (let item of data){
 		createLine(item);
 	}
 }
+
+function clearSearch() {
+	document.getElementById("txtSearch").value = "";
+	refreshTable();
+}
+
 function btnAdd_click() {
 	document.getElementById("txtName").value = "";	
 	const title = document.getElementById("modalCreateTitle");
