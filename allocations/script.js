@@ -65,14 +65,7 @@ async function refreshTable() {
 }
 
 async function loadTable(){
-	let txtSearch = document.getElementById("txtSearch").value;
-	let filter = route;
-
-	if (txtSearch) {
-		filter = route + "?partName=" + txtSearch;
-	} 
-
-	let data = await getData(filter);
+	let data = await getData(route);
 	
 	if(!data.length) {
 		document.getElementById("showNotData").hidden=false;
@@ -81,15 +74,10 @@ async function loadTable(){
 		document.getElementById("showNotData").hidden=true;
 		document.getElementById("table").hidden=false;
 	}
-	
+
 	for (let item of data){
 		createLine(item);
 	}
-}
-
-function clearSearch() {
-	document.getElementById("txtSearch").value = "";
-	refreshTable();
 }
 
 function checkInputs(inputs) {
