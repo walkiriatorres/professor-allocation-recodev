@@ -6,6 +6,12 @@ p{
 	font-size: 12px;
 }
 
+#exit{
+  cursor: hand;
+  cursor: pointer;
+
+}
+
 #btnAdd{
 	margin-bottom: 10px;
 	color: #fff;
