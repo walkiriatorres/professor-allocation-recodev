@@ -45,6 +45,10 @@
           <li class="nav-item">
             <a class="nav-link" href="/allocations">Alocações</a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/">
+              Sair
+            </a>
         </ul>
       </div>
     </div>
@@ -53,36 +57,23 @@
     <h1>CURSOS</h1>
     <label for="txtSearch">Pesquisar Curso: </label>
     <div class="input-group mb-3">
-        <input
-        id="txtSearch"
-        type="text"
-        class="form-control"
-        placeholder="Curso"
-        aria-label="Pesquisar"
+      <input id="txtSearch" type="text" class="form-control" placeholder="Curso" aria-label="Pesquisar"
         aria-describedby="btnSearch">
-        <button
-        id="btnSearch"
-        class="btn btn-outline-secondary"
-        type="button"
-        onclick="refreshTable()"     
-        ><i class="fa fa-search"></i>
-        </button>
-        <button
-        id="btnClearSearch"
-        class="btn btn-outline-secondary"
-        type="button"
-        onclick="clearSearch()"     
-        ><i class="fa fa-times"></i>
-        </button>
-    </div>   
+      <button id="btnSearch" class="btn btn-outline-secondary" type="button" onclick="refreshTable()"><i
+          class="fa fa-search"></i>
+      </button>
+      <button id="btnClearSearch" class="btn btn-outline-secondary" type="button" onclick="clearSearch()"><i
+          class="fa fa-times"></i>
+      </button>
+    </div>
     <button id="btnAdd" type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#modalCreate">
       Adicionar
     </button>
     <button id="btnDeleteAllCourses" type="button" class="btn btn-danger">Deletar Todos Cursos</button>
-    <hr/>
+    <hr />
     <div id="showNotData">
-        <hr/>
-        <h2>Não há dados</h2>
+      <hr />
+      <h2>Não há dados</h2>
     </div>
     <table id="table" class="table table-striped">
       <thead>
@@ -92,8 +83,8 @@
           <th></th>
         </tr>
       </thead>
-      <tbody id="tableBody"></tbody>      
-    </table>    
+      <tbody id="tableBody"></tbody>
+    </table>
   </main>
   <!-- Modal CREATE and UPDATE-->
   <div class="modal fade" id="modalCreate" tabindex="-1" role="dialog" aria-labelledby="modalCreate" aria-hidden="true">
