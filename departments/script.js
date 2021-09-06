@@ -119,6 +119,21 @@ function iconDelete_click(dep) {
 	var myModal = new bootstrap.Modal(document.getElementById('modalDelete'))
 	myModal.show();
 }
+
+function btnDeleteAll_click() {
+	actualId = undefined;
+	let txtDepartment = document.getElementById('txtDeleteDepartment');
+	txtDepartment.textContent = "";
+	
+	const title = document.getElementById("modalDeleteTitle");
+	title.textContent = "Deletar Todos Departamentos";
+	document.getElementById('msgConfirmDelete').hidden=true;
+	document.getElementById('msgConfirmDeleteAll').hidden=false;
+
+	var myModal = new bootstrap.Modal(document.getElementById('modalDelete'))
+	myModal.show();
+}
+
 async function applyAddProfessor() {	
 	const name = document.getElementById("txtName").value;
 
@@ -159,19 +174,5 @@ confirmDelete.addEventListener("click", applyDeleteProfessor);
 
 const btnDeleteAll = document.getElementById("btnDeleteAllDepartments");
 btnDeleteAll.addEventListener("click", () => btnDeleteAll_click());
-
-function btnDeleteAll_click() {
-	actualId = undefined;
-	let txtDepartment = document.getElementById('txtDeleteDepartment');
-	txtDepartment.textContent = "";
-	
-	const title = document.getElementById("modalDeleteTitle");
-	title.textContent = "Deletar Todos Departamentos";
-	document.getElementById('msgConfirmDelete').hidden=true;
-	document.getElementById('msgConfirmDeleteAll').hidden=false;
-
-	var myModal = new bootstrap.Modal(document.getElementById('modalDelete'))
-	myModal.show();
-}
 
 loadTable();
