@@ -86,8 +86,10 @@ a{
 a:hover{
   color: black;
 }
-btnAdd{
-  
+#exit{
+  cursor: hand;
+  cursor: pointer;
+
 }
 
 #tela4 {
