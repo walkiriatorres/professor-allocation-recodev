@@ -44,6 +44,9 @@
           <li class="nav-item">
             <a class="nav-link active" href="/allocations">Alocações</a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/"> Sair</a>
+          </li>
         </ul>
       </div>
     </div>
@@ -52,11 +55,11 @@
     <h1>ALOCAÇÕES</h1>
     <button id="btnAdd" type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#modalCreate">
       Adicionar
-    </button>    
+    </button>
     <button id="btnDeleteAllAllocations" type="button" class="btn btn-danger">Deletar Todas Alocações</button>
     <div id="showNotData">
-        <hr/>
-        <h2>Não há dados</h2>
+      <hr />
+      <h2>Não há dados</h2>
     </div>
     <table id="table" class="table table-striped">
       <thead>
@@ -70,7 +73,7 @@
           <th scope="col"></th>
         </tr>
       </thead>
-      <tbody id="tableBody"></tbody>      
+      <tbody id="tableBody"></tbody>
     </table>
   </main>
   <!-- Modal CREATE and UPDATE-->
