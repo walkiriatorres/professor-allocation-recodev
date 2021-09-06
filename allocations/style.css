@@ -58,3 +58,9 @@ p{
 #btnDeleteAllAllocations{
 	margin-bottom: 10px;
 }
+
+#exit{
+  cursor: hand;
+  cursor: pointer;
+
+}
