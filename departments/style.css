@@ -46,3 +46,10 @@
 p{
 	font-size: 12px;
 }
+
+
+#exit{
+    cursor: hand;
+    cursor: pointer;
+  
+  }

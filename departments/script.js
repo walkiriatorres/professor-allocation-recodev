@@ -30,9 +30,9 @@ async function createLine(dep) {
 
 	colunaDelete.appendChild(iconDelete);
 	linha.appendChild(colunaDelete);
-	
+
 	const table = document.getElementById("tableBody");
-	
+
 	table.appendChild(linha);
 }
 
@@ -42,25 +42,25 @@ async function refreshTable() {
 	loadTable();
 }
 
-async function loadTable(){
+async function loadTable() {
 	let txtSearch = document.getElementById("txtSearch").value;
 	let filter = route;
 
 	if (txtSearch) {
 		filter = route + "?partName=" + txtSearch;
-	} 
+	}
 
 	let data = await getData(filter);
-	
-	if(!data.length) {
-		document.getElementById("showNotData").hidden=false;
-		document.getElementById("table").hidden=true;
+
+	if (!data.length) {
+		document.getElementById("showNotData").hidden = false;
+		document.getElementById("table").hidden = true;
 	} else {
-		document.getElementById("showNotData").hidden=true;
-		document.getElementById("table").hidden=false;
+		document.getElementById("showNotData").hidden = true;
+		document.getElementById("table").hidden = false;
 	}
-	
-	for (let item of data){
+
+	for (let item of data) {
 		createLine(item);
 	}
 }
@@ -71,18 +71,18 @@ function clearSearch() {
 }
 
 function btnAdd_click() {
-	document.getElementById("txtName").value = "";	
+	document.getElementById("txtName").value = "";
 	const title = document.getElementById("modalCreateTitle");
 	title.textContent = "Adicionar Departamento";
 	actualId = undefined;
-	
+
 	document.getElementById("btnModalCreate").disabled = true;
-	document.getElementById("txtName").addEventListener("input", function(event){
-	var conteudo = document.getElementById("txtName").value;
-	if (conteudo !== null && conteudo !== '') {      
-		document.getElementById("btnModalCreate").disabled = false;
+	document.getElementById("txtName").addEventListener("input", function (event) {
+		var conteudo = document.getElementById("txtName").value;
+		if (conteudo !== null && conteudo !== '') {
+			document.getElementById("btnModalCreate").disabled = false;
 		} else {
-		document.getElementById("btnModalCreate").disabled = true;
+			document.getElementById("btnModalCreate").disabled = true;
 		}
 	});
 }
@@ -93,14 +93,14 @@ function iconUpdate_click(dep) {
 
 	document.getElementById("txtName").value = dep.name;
 	actualId = dep.id;
-	
+
 	document.getElementById("btnModalCreate").disabled = true;
-	document.getElementById("txtName").addEventListener("input", function(event){
-	var conteudo = document.getElementById("txtName").value;
-	if (conteudo !== null && conteudo !== '') {      
-		document.getElementById("btnModalCreate").disabled = false;
+	document.getElementById("txtName").addEventListener("input", function (event) {
+		var conteudo = document.getElementById("txtName").value;
+		if (conteudo !== null && conteudo !== '') {
+			document.getElementById("btnModalCreate").disabled = false;
 		} else {
-		document.getElementById("btnModalCreate").disabled = true;
+			document.getElementById("btnModalCreate").disabled = true;
 		}
 	});
 
@@ -109,12 +109,12 @@ function iconUpdate_click(dep) {
 }
 
 function iconDelete_click(dep) {
-	actualId = dep.id;	
+	actualId = dep.id;
 
 	let txtDepartment = document.getElementById('txtDeleteDepartment');
-	txtDepartment.textContent = dep.name;	
-	document.getElementById('msgConfirmDelete').hidden=false;
-	document.getElementById('msgConfirmDeleteAll').hidden=true;
+	txtDepartment.textContent = dep.name;
+	document.getElementById('msgConfirmDelete').hidden = false;
+	document.getElementById('msgConfirmDeleteAll').hidden = true;
 
 	var myModal = new bootstrap.Modal(document.getElementById('modalDelete'))
 	myModal.show();
@@ -124,17 +124,17 @@ function btnDeleteAll_click() {
 	actualId = undefined;
 	let txtDepartment = document.getElementById('txtDeleteDepartment');
 	txtDepartment.textContent = "";
-	
+
 	const title = document.getElementById("modalDeleteTitle");
 	title.textContent = "Deletar Todos Departamentos";
-	document.getElementById('msgConfirmDelete').hidden=true;
-	document.getElementById('msgConfirmDeleteAll').hidden=false;
+	document.getElementById('msgConfirmDelete').hidden = true;
+	document.getElementById('msgConfirmDeleteAll').hidden = false;
 
 	var myModal = new bootstrap.Modal(document.getElementById('modalDelete'))
 	myModal.show();
 }
 
-async function applyAddProfessor() {	
+async function applyAddProfessor() {
 	const name = document.getElementById("txtName").value;
 
 	let result;
@@ -144,17 +144,17 @@ async function applyAddProfessor() {
 	} else {
 		result = await update(route + actualId, { name });
 	}
-	if(result) {
+	if (result) {
 		refreshTable();
 	}
 }
 
-async function applyDeleteProfessor(){
+async function applyDeleteProfessor() {
 	let result;
-	
+
 	if (!actualId) {
 		result = await deleteData(route);
-	} else {	
+	} else {
 		result = await deleteData(route + actualId);
 	}
 
@@ -176,3 +176,11 @@ const btnDeleteAll = document.getElementById("btnDeleteAllDepartments");
 btnDeleteAll.addEventListener("click", () => btnDeleteAll_click());
 
 loadTable();
+
+function sair() {
+	var saida = confirm("Tem certeza que deseja sair?");
+	if (saida == true) {
+		window.location.replace("https://elegant-knuth-94245c.netlify.app/");
+	} else {
+	}
+}
