@@ -44,6 +44,10 @@
           <li class="nav-item">
             <a class="nav-link" href="/allocations">Alocações</a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/">
+              Sair
+            </a>
         </ul>
       </div>
     </div>
@@ -51,37 +55,24 @@
   <main class="container">
     <h1>DEPARTAMENTOS</h1>
     <label for="txtSearch">Pesquisar Departamento: </label>
-    <div class="input-group mb-3">        
-        <input
-        id="txtSearch"
-        type="text"
-        class="form-control"
-        placeholder="Departamento"
-        aria-label="Pesquisar"
+    <div class="input-group mb-3">
+      <input id="txtSearch" type="text" class="form-control" placeholder="Departamento" aria-label="Pesquisar"
         aria-describedby="btnSearch">
-        <button
-        id="btnSearch"
-        class="btn btn-outline-secondary"
-        type="button"
-        onclick="refreshTable()"     
-        ><i class="fa fa-search"></i>
-        </button>
-	      <button
-        id="btnClearSearch"
-        class="btn btn-outline-secondary"
-        type="button"
-        onclick="clearSearch()"     
-        ><i class="fa fa-times"></i>
-        </button>
+      <button id="btnSearch" class="btn btn-outline-secondary" type="button" onclick="refreshTable()"><i
+          class="fa fa-search"></i>
+      </button>
+      <button id="btnClearSearch" class="btn btn-outline-secondary" type="button" onclick="clearSearch()"><i
+          class="fa fa-times"></i>
+      </button>
     </div>
     <button id="btnAdd" type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#modalCreate">
       Adicionar
     </button>
     <button id="btnDeleteAllDepartments" type="button" class="btn btn-danger">Deletar Todos Departamentos</button>
     <div id="showNotData">
-        <hr/>
-        <h2>Não há dados</h2>
-    </div> 
+      <hr />
+      <h2>Não há dados</h2>
+    </div>
     <table id="table" class="table table-striped">
       <thead>
         <tr>
@@ -90,7 +81,7 @@
           <th scope="col"></i></th>
         </tr>
       </thead>
-      <tbody id="tableBody"></tbody>      
+      <tbody id="tableBody"></tbody>
     </table>
   </main>
   <!-- Modal CREATE and UPDATE-->
@@ -136,7 +127,7 @@
           <p>Você quer deletar o departamento: <strong id="txtDeleteDepartment"></strong>?</p>
         </div>
         <div id="msgConfirmDeleteAll" class="modal-body">
-	  <p>Você quer deletar <strong>todos os departamentos</strong> ?</p>
+          <p>Você quer deletar <strong>todos os departamentos</strong> ?</p>
           <p>Ao confirmar esta opção você deletará também todos os professores e alocações.</p>
         </div>
         <div class="modal-footer">
