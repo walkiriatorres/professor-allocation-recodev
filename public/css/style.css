@@ -10,7 +10,7 @@
   top: 20px;
   left: 20px;
 
-  color: #fff;
+  color: #f28705;
   font-weight: bold;
   font-size: 1.35rem;
 }
@@ -27,9 +27,13 @@ body{
   background: url(/public/img/bg.jpg);
 }
 
-body h2{
-  color: #fff;
+body h1{
+  color: #f28705;
 }
+
+/*body h2{
+  color: #f28705;
+}*/
 
 img{
   width: 230px;
